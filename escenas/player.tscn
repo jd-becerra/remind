@@ -1,9 +1,90 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxft8i6fmnxwt"]
+[gd_scene load_steps=13 format=3 uid="uid://bxft8i6fmnxwt"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pqjor"]
+[ext_resource type="Texture2D" uid="uid://cb5ijlr5ik5qx" path="res://escenas/protagonista.png" id="2_erqnv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqdox"]
-size = Vector2(20, 26)
+size = Vector2(28, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe7u5"]
+atlas = ExtResource("2_erqnv")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6142"]
+atlas = ExtResource("2_erqnv")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh2wn"]
+atlas = ExtResource("2_erqnv")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkbwe"]
+atlas = ExtResource("2_erqnv")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tti0q"]
+atlas = ExtResource("2_erqnv")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_binba"]
+atlas = ExtResource("2_erqnv")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0evl2"]
+atlas = ExtResource("2_erqnv")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4wqs"]
+atlas = ExtResource("2_erqnv")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75ylm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe7u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6142")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh2wn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkbwe")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tti0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_binba")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0evl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tti0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4wqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tti0q")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(118, 67)
@@ -11,7 +92,7 @@ wall_min_slide_angle = 2.44346
 script = ExtResource("1_pqjor")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_oqdox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -32,3 +113,18 @@ metadata/_aseprite_wizard_interface_config_ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_75ylm")
+animation = &"Idle"
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://assets/personajes/protagonista.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1dd4f710e76abae5031d8ae92d17b779"
