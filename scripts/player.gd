@@ -31,7 +31,7 @@ func update_animations():
 	else:
 		animation.play("Idle")
 
-func jump(delta):
+func jump():
 	# Saltar solo si está en el suelo
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -jump_speed
