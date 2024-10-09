@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dme6yipgx1cxq"
+path="res://.godot/imported/protagonista.aseprite-f3c66d9eaec0f5d43b2457717e560786.res"
+
+[deps]
+
+source_file="res://assets/personajes/protagonista.aseprite"
+dest_files=["res://.godot/imported/protagonista.aseprite-f3c66d9eaec0f5d43b2457717e560786.res"]
+
+[params]
+

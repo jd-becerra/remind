@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://57jl2rjwj2es"
+path="res://.godot/imported/enemigo_ira.aseprite-6f2fe6d753a9655b828e9154fe4ebcf2.res"
+
+[deps]
+
+source_file="res://assets/personajes/enemigos/enemigo_ira.aseprite"
+dest_files=["res://.godot/imported/enemigo_ira.aseprite-6f2fe6d753a9655b828e9154fe4ebcf2.res"]
+
+[params]
+
