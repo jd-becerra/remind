@@ -12,7 +12,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	jump(delta)
+	jump()
 	move_x()
 	move_and_slide() # Mueve al personaje y detecta colisiones
 	flip()
