@@ -11,7 +11,9 @@ func _physics_process(delta):
 	# Aplicar gravedad antes de mover al personaje
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
+	else:
+		velocity.y = 0
+
 	jump()
 	move_x()
 	move_and_slide() # Mueve al personaje y detecta colisiones

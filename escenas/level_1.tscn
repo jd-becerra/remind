@@ -21,5 +21,3 @@ shape = SubResource("RectangleShape2D_3aqwa")
 
 [node name="JugadorSprite" parent="." instance=ExtResource("1_sbwn3")]
 position = Vector2(121, 93)
-move_speed = null
-jump_speed = null
