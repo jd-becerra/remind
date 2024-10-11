@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var attack_area = $AttackArea
 
-var is_fascing_right = true
+var is_facing_right = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking = false
 
@@ -33,7 +33,7 @@ func _physics_process(delta):
 		move_and_slide()
 		flip()
 		update_animations()
-		atack()
+		attack()
 
 func update_animations():
 	if is_attacking:
@@ -56,16 +56,16 @@ func jump():
 		velocity.y = -jump_speed
 
 func flip():
-	if (is_fascing_right and velocity.x < 0) or (not is_fascing_right and velocity.x > 0):
+	if (is_facing_right and velocity.x < 0) or (not is_facing_right and velocity.x > 0):
 		scale.x *= -1
-		is_fascing_right = not is_fascing_right
+		is_facing_right = not is_facing_right
 
 func move_x():
 	var input_axis = Input.get_axis("move_left", "move_right")
 	velocity.x = input_axis * move_speed
 	
-func atack():
-	if Input.is_action_just_pressed("atack_knife") and not is_attacking:
+func attack():
+	if Input.is_action_just_pressed("attack_knife") and not is_attacking:
 		is_attacking = true
 		attack_area.monitoring = true
 		attack_area.get_node("CollisionShape2D").disabled = false
