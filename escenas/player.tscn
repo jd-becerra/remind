@@ -93,6 +93,10 @@ radius = 20.025
 position = Vector2(118, 67)
 wall_min_slide_angle = 2.44346
 script = ExtResource("1_pqjor")
+move_speed = null
+jump_speed = null
+spawn_point = null
+max_fall_y = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var move_speed: float = 200
 @export var jump_speed: float = 400
+@export var spawn_point: Vector2 = Vector2(121, 93)
+@export var max_fall_y: float = 600
 
 @onready var animation = $AnimatedSprite2D
 @onready var attack_area = $AttackArea
@@ -16,12 +18,22 @@ func _physics_process(delta):
 	else:
 		velocity.y = 0
 
-	jump()
-	move_x()
-	move_and_slide()
-	flip()
-	update_animations()
-	atack()
+	if position.y > max_fall_y:
+		position = spawn_point
+		velocity = Vector2()
+
+	else:
+		jump()
+
+		if is_attacking:
+			velocity.x = 0
+		else:
+			move_x()
+
+		move_and_slide()
+		flip()
+		update_animations()
+		atack()
 
 func update_animations():
 	if is_attacking:
