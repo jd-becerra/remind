@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bxft8i6fmnxwt" path="res://escenas/player.tscn" id="1_sbwn3"]
 [ext_resource type="Texture2D" uid="uid://dp8728poneqkj" path="res://assets/plataformas/platform.png" id="2_j3lc7"]
-[ext_resource type="PackedScene" path="res://escenas/enemigo.tscn" id="3_qy4hi"]
+[ext_resource type="PackedScene" uid="uid://dotcm5old5v5e" path="res://escenas/enemigo.tscn" id="3_qy4hi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3aqwa"]
 size = Vector2(376, 32)
@@ -111,7 +111,7 @@ shape = SubResource("RectangleShape2D_3aqwa")
 position = Vector2(22, -103)
 
 [node name="Enemigo2" parent="." instance=ExtResource("3_qy4hi")]
-position = Vector2(1000, -2)
+position = Vector2(1000, -11)
 
 [node name="Enemigo3" parent="." instance=ExtResource("3_qy4hi")]
-position = Vector2(1429, 77)
+position = Vector2(1428, 71)

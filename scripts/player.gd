@@ -63,7 +63,7 @@ func flip():
 func move_x():
 	var input_axis = Input.get_axis("move_left", "move_right")
 	velocity.x = input_axis * move_speed
-	
+
 func attack():
 	if Input.is_action_just_pressed("attack_knife") and not is_attacking:
 		is_attacking = true

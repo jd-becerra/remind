@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://da1362cvrmuoe"]
+[gd_scene load_steps=23 format=3 uid="uid://dotcm5old5v5e"]
 
+[ext_resource type="Shader" path="res://shaders/red_filter.gdshader" id="1_ahgkj"]
 [ext_resource type="Texture2D" uid="uid://drhukh41gt8d5" path="res://assets/personajes/enemigos/Revtest/ZKELG3.png" id="1_isrol"]
 [ext_resource type="Script" path="res://escenas/enemigo.gd" id="1_r2uj7"]
 [ext_resource type="Texture2D" uid="uid://bytdd3nltiax3" path="res://assets/personajes/enemigos/Revtest/ZKELH3.png" id="2_6gciu"]
@@ -18,6 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://djxnwkopfnxyi" path="res://assets/personajes/enemigos/Revtest/ZKELQ0.png" id="11_ps7kx"]
 [ext_resource type="Texture2D" uid="uid://dvlpcwom71xys" path="res://assets/personajes/enemigos/Revtest/ZKELL5.png" id="11_v7qp4"]
 [ext_resource type="Texture2D" uid="uid://b8dw5tx36roe4" path="res://assets/personajes/enemigos/Revtest/ZKELL6.png" id="12_2yba8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i657e"]
+shader = ExtResource("1_ahgkj")
+shader_parameter/hit = false
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jj5mg"]
 animations = [{
@@ -97,6 +102,7 @@ animations = [{
 size = Vector2(67.5, 85.5)
 
 [node name="Enemigo" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_i657e")
 script = ExtResource("1_r2uj7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
