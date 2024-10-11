@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bojjm1ayv5537"]
+[gd_scene load_steps=5 format=3 uid="uid://bojjm1ayv5537"]
 
 [ext_resource type="PackedScene" uid="uid://bxft8i6fmnxwt" path="res://escenas/player.tscn" id="1_sbwn3"]
 [ext_resource type="Texture2D" uid="uid://dp8728poneqkj" path="res://assets/plataformas/platform.png" id="2_j3lc7"]
+[ext_resource type="PackedScene" uid="uid://da1362cvrmuoe" path="res://escenas/enemigo.tscn" id="3_qy4hi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3aqwa"]
 size = Vector2(376, 32)
@@ -11,10 +12,6 @@ position = Vector2(172, 269)
 
 [node name="JugadorSprite" parent="." instance=ExtResource("1_sbwn3")]
 position = Vector2(121, 93)
-move_speed = null
-jump_speed = null
-spawn_point = null
-max_fall_y = null
 
 [node name="Camera2D" type="Camera2D" parent="JugadorSprite"]
 
@@ -109,3 +106,6 @@ texture = ExtResource("2_j3lc7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas/Platform9"]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_3aqwa")
+
+[node name="Enemigo" parent="." instance=ExtResource("3_qy4hi")]
+position = Vector2(22, -103)

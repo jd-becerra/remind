@@ -1,0 +1,112 @@
+[gd_scene load_steps=21 format=3 uid="uid://da1362cvrmuoe"]
+
+[ext_resource type="Texture2D" uid="uid://drhukh41gt8d5" path="res://assets/personajes/enemigos/Revtest/ZKELG3.png" id="1_isrol"]
+[ext_resource type="Script" path="res://escenas/enemigo.gd" id="1_r2uj7"]
+[ext_resource type="Texture2D" uid="uid://bytdd3nltiax3" path="res://assets/personajes/enemigos/Revtest/ZKELH3.png" id="2_6gciu"]
+[ext_resource type="Texture2D" uid="uid://dg502hkfk8v4f" path="res://assets/personajes/enemigos/Revtest/ZKELI3.png" id="3_2wwsi"]
+[ext_resource type="Texture2D" uid="uid://cio1bv3ubk8kl" path="res://assets/personajes/enemigos/Revtest/ZKELG6.png" id="4_xnjhj"]
+[ext_resource type="Texture2D" uid="uid://b3rqcjgu7skl4" path="res://assets/personajes/enemigos/Revtest/ZKELH6.png" id="5_3tq3s"]
+[ext_resource type="Texture2D" uid="uid://bcnqnaj2f78vg" path="res://assets/personajes/enemigos/Revtest/ZKELI6.png" id="6_b7omd"]
+[ext_resource type="Texture2D" uid="uid://drtumncq8fwwd" path="res://assets/personajes/enemigos/Revtest/ZKELL1.png" id="7_ayu64"]
+[ext_resource type="Texture2D" uid="uid://dy75f6lldyhn8" path="res://assets/personajes/enemigos/Revtest/ZKELM0.png" id="7_p6h44"]
+[ext_resource type="Texture2D" uid="uid://b1ofkb1iawwj8" path="res://assets/personajes/enemigos/Revtest/ZKELN0.png" id="8_ltydw"]
+[ext_resource type="Texture2D" uid="uid://d2s5u7j6nbpi3" path="res://assets/personajes/enemigos/Revtest/ZKELL2.png" id="8_psrkv"]
+[ext_resource type="Texture2D" uid="uid://cowv0lvpnklgy" path="res://assets/personajes/enemigos/Revtest/ZKELL3.png" id="9_0bo4v"]
+[ext_resource type="Texture2D" uid="uid://ckr842llvnk57" path="res://assets/personajes/enemigos/Revtest/ZKELO0.png" id="9_rmtdv"]
+[ext_resource type="Texture2D" uid="uid://dkqc7aebip551" path="res://assets/personajes/enemigos/Revtest/ZKELL4.png" id="10_2ka86"]
+[ext_resource type="Texture2D" uid="uid://jkjqogm3uthm" path="res://assets/personajes/enemigos/Revtest/ZKELP0.png" id="10_bysgu"]
+[ext_resource type="Texture2D" uid="uid://djxnwkopfnxyi" path="res://assets/personajes/enemigos/Revtest/ZKELQ0.png" id="11_ps7kx"]
+[ext_resource type="Texture2D" uid="uid://dvlpcwom71xys" path="res://assets/personajes/enemigos/Revtest/ZKELL5.png" id="11_v7qp4"]
+[ext_resource type="Texture2D" uid="uid://b8dw5tx36roe4" path="res://assets/personajes/enemigos/Revtest/ZKELL6.png" id="12_2yba8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jj5mg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_isrol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6gciu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2wwsi")
+}],
+"loop": true,
+"name": &"attack_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xnjhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3tq3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b7omd")
+}],
+"loop": true,
+"name": &"attack_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_p6h44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ltydw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rmtdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bysgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ps7kx")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ayu64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_psrkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0bo4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2ka86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v7qp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2yba8")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfc6h"]
+size = Vector2(67.5, 85.5)
+
+[node name="Enemigo" type="CharacterBody2D"]
+script = ExtResource("1_r2uj7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -38)
+sprite_frames = SubResource("SpriteFrames_jj5mg")
+animation = &"walk_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.75, -41.25)
+shape = SubResource("RectangleShape2D_cfc6h")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-37, -41)
