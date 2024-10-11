@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxft8i6fmnxwt"]
+[gd_scene load_steps=14 format=3 uid="uid://bxft8i6fmnxwt"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pqjor"]
 [ext_resource type="Texture2D" uid="uid://cb5ijlr5ik5qx" path="res://escenas/protagonista.png" id="2_erqnv"]
@@ -53,7 +53,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6lwjm")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
 "speed": 10.0
 }, {
@@ -86,12 +86,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_f08op"]
+radius = 20.025
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(118, 67)
 wall_min_slide_angle = 2.44346
 script = ExtResource("1_pqjor")
-move_speed = null
-jump_speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -119,7 +120,9 @@ metadata/_aseprite_wizard_interface_config_ = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_fpsfh")
-animation = &"Idle"
+animation = &"Attack"
+frame = 3
+frame_progress = 1.0
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
@@ -130,3 +133,10 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://assets/personajes/protagonista.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "1dd4f710e76abae5031d8ae92d17b779"
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(19, 5)
+shape = SubResource("CircleShape2D_f08op")
+disabled = true
