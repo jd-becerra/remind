@@ -11,11 +11,17 @@ func _physics_process(delta):
 	if  not is_on_floor():
 		velocity.y += gravity + delta
 	
-	if !$RayCast2D.is_colliding() && is_on_floor():
-		flip()
+	if !$RayCast2D.is_colliding() && is_on_floor() or is_on_wall():
+		flip() 
+		
+	var collider = $RayCast2D.get_collider()
+	
+	if collider is Node:
+		if collider.is_in_group("Enemigo"):
+			flip()
 	
 	velocity.x = speed
-	move_and_slide()
+	move_and_slide() 
 	
 func flip():
 	facing_right = !facing_right
@@ -25,3 +31,4 @@ func flip():
 		speed = abs(speed)
 	else:
 		speed = abs(speed) * -1
+		

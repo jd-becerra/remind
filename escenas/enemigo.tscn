@@ -101,7 +101,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfc6h"]
 size = Vector2(67.5, 85.5)
 
-[node name="Enemigo" type="CharacterBody2D"]
+[node name="Enemigo" type="CharacterBody2D" groups=["enemigo"]]
 material = SubResource("ShaderMaterial_i657e")
 script = ExtResource("1_r2uj7")
 
@@ -115,4 +115,7 @@ position = Vector2(-0.75, -41.25)
 shape = SubResource("RectangleShape2D_cfc6h")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(-37, -41)
+position = Vector2(-42, -82)
+target_position = Vector2(0, 90)
+collision_mask = 5
+collide_with_areas = true
