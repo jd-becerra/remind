@@ -127,7 +127,8 @@ shape = SubResource("RectangleShape2D_oqdox")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6l25u")
-animation = &"Attack"
+animation = &"Jump"
+frame_progress = 0.483269
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",

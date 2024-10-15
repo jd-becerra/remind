@@ -41,7 +41,7 @@ func update_animations():
 	
 	if not is_on_floor():
 		if velocity.y < 0:
-			print("Saltando")
+			animation.play("Jump")
 		else:
 			animation.play("Idle")
 		return
