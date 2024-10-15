@@ -43,7 +43,7 @@ func update_animations():
 		if velocity.y < 0:
 			animation.play("Jump")
 		else:
-			animation.play("Idle")
+			animation.play("Jump")  # De mientras, usamos la misma animación para saltar y caer
 		return
 	
 	if velocity.x != 0:

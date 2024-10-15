@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Remind"
-run/main_scene="res://escenas/level_1.tscn"
+run/main_scene="res://escenas/lvl_1.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -53,3 +53,4 @@ attack_knife={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.309804, 0.258824, 0.215686, 1)
