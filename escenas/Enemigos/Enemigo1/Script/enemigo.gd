@@ -17,6 +17,7 @@ func _ready():
 
 func _physics_process(delta):
 	if is_hurt:
+		position.x = position.x + ((hurt_timer.get_time_left() * 5) * (-1 if facing_right else 1))
 		return
 	
 	if  not is_on_floor():
