@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bxft8i6fmnxwt"]
+[gd_scene load_steps=18 format=3 uid="uid://bxft8i6fmnxwt"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_pqjor"]
-[ext_resource type="Texture2D" uid="uid://cb5ijlr5ik5qx" path="res://escenas/protagonista.png" id="2_erqnv"]
+[ext_resource type="Script" path="res://escenas/Jugador/Script/player.gd" id="1_pqjor"]
+[ext_resource type="Texture2D" uid="uid://cb5ijlr5ik5qx" path="res://escenas/Jugador/protagonista.png" id="2_erqnv"]
+[ext_resource type="Script" path="res://escenas/Jugador/Script/hitbox_player.gd" id="3_ku6t7"]
+[ext_resource type="Script" path="res://escenas/Jugador/Script/health_player.gd" id="4_csamu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqdox"]
 size = Vector2(28, 62)
@@ -98,8 +100,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f08op"]
-radius = 20.025
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gp02"]
+radius = 22.0227
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibrq8"]
+radius = 12.0
+height = 48.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(118, 67)
@@ -114,6 +120,8 @@ shape = SubResource("RectangleShape2D_oqdox")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_hpwyg")
 animation = &"Attack"
+frame = 3
+frame_progress = 1.0
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
@@ -128,9 +136,23 @@ metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true
 }
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_ku6t7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(19, 5)
-shape = SubResource("CircleShape2D_f08op")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(14, 4)
+shape = SubResource("CircleShape2D_5gp02")
 disabled = true
+
+[node name="HealthComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("4_csamu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent"]
+shape = SubResource("CapsuleShape2D_ibrq8")
+
+[connection signal="onDamageTook" from="HealthComponent" to="." method="_on_health_component_on_damage_took"]
+[connection signal="onDead" from="HealthComponent" to="." method="_on_health_component_on_dead"]

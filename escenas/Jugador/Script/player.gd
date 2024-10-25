@@ -6,11 +6,13 @@ extends CharacterBody2D
 @export var max_fall_y: float = 600
 
 @onready var animation = $AnimatedSprite2D
-@onready var attack_area = $AttackArea
+@onready var attack_area = $HitboxComponent
+@onready var health_component = $HealthComponent
 
 var is_facing_right = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking = false
+
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -77,3 +79,11 @@ func _on_attack_finished():
 	attack_area.monitoring = false
 	attack_area.get_node("CollisionShape2D").disabled = true
 	animation.disconnect("animation_finished", Callable(self, "_on_attack_finished"))
+
+func _on_health_component_on_dead() -> void:
+	position = spawn_point
+	health_component.set_health(3)
+
+
+func _on_health_component_on_damage_took() -> void:
+	pass # Replace with function body.

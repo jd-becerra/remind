@@ -1,8 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://dotcm5old5v5e"]
+[gd_scene load_steps=27 format=3 uid="uid://dotcm5old5v5e"]
 
 [ext_resource type="Shader" path="res://shaders/red_filter.gdshader" id="1_ahgkj"]
 [ext_resource type="Texture2D" uid="uid://drhukh41gt8d5" path="res://assets/personajes/enemigos/Revtest/ZKELG3.png" id="1_isrol"]
-[ext_resource type="Script" path="res://escenas/enemigo.gd" id="1_r2uj7"]
+[ext_resource type="Script" path="res://escenas/Enemigos/Enemigo1/Script/enemigo.gd" id="1_r2uj7"]
 [ext_resource type="Texture2D" uid="uid://bytdd3nltiax3" path="res://assets/personajes/enemigos/Revtest/ZKELH3.png" id="2_6gciu"]
 [ext_resource type="Texture2D" uid="uid://dg502hkfk8v4f" path="res://assets/personajes/enemigos/Revtest/ZKELI3.png" id="3_2wwsi"]
 [ext_resource type="Texture2D" uid="uid://cio1bv3ubk8kl" path="res://assets/personajes/enemigos/Revtest/ZKELG6.png" id="4_xnjhj"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://djxnwkopfnxyi" path="res://assets/personajes/enemigos/Revtest/ZKELQ0.png" id="11_ps7kx"]
 [ext_resource type="Texture2D" uid="uid://dvlpcwom71xys" path="res://assets/personajes/enemigos/Revtest/ZKELL5.png" id="11_v7qp4"]
 [ext_resource type="Texture2D" uid="uid://b8dw5tx36roe4" path="res://assets/personajes/enemigos/Revtest/ZKELL6.png" id="12_2yba8"]
+[ext_resource type="Script" path="res://escenas/Enemigos/Enemigo1/Script/hitbox_enemy.gd" id="21_66r1q"]
+[ext_resource type="Script" path="res://escenas/Enemigos/Enemigo1/Script/health_enemy.gd" id="23_d82g1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i657e"]
 shader = ExtResource("1_ahgkj")
@@ -99,7 +101,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfc6h"]
-size = Vector2(67.5, 85.5)
+size = Vector2(27, 78.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6rjb"]
+size = Vector2(24, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ank5r"]
+size = Vector2(73, 78)
 
 [node name="Enemigo" type="CharacterBody2D" groups=["enemigo"]]
 material = SubResource("ShaderMaterial_i657e")
@@ -111,7 +119,7 @@ sprite_frames = SubResource("SpriteFrames_jj5mg")
 animation = &"walk_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.75, -41.25)
+position = Vector2(-4.5, -37.75)
 shape = SubResource("RectangleShape2D_cfc6h")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -119,3 +127,28 @@ position = Vector2(-42, -82)
 target_position = Vector2(0, 90)
 collision_mask = 5
 collide_with_areas = true
+
+[node name="HurtTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("21_66r1q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(-27, -38)
+shape = SubResource("RectangleShape2D_p6rjb")
+
+[node name="HealthComponent" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("23_d82g1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent"]
+position = Vector2(-2.5, -38)
+shape = SubResource("RectangleShape2D_ank5r")
+
+[connection signal="timeout" from="HurtTimer" to="." method="_on_hurt_timer_timeout"]
+[connection signal="onDamageTook" from="HealthComponent" to="." method="_on_health_component_on_damage_took"]
+[connection signal="onDead" from="HealthComponent" to="." method="_on_health_component_on_dead"]
