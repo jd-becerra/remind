@@ -112,6 +112,8 @@ size = Vector2(73, 78)
 [node name="Enemigo" type="CharacterBody2D" groups=["enemigo"]]
 material = SubResource("ShaderMaterial_i657e")
 script = ExtResource("1_r2uj7")
+knockback_force = null
+damage_blink_time = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -38)
@@ -120,7 +122,7 @@ animation = &"death"
 frame = 3
 frame_progress = 0.154828
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4.5, -37.75)
 shape = SubResource("RectangleShape2D_cfc6h")
 
@@ -133,12 +135,12 @@ collide_with_areas = true
 [node name="HurtTimer" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="HitboxComponent" type="Area2D" parent="."]
+[node name="HitboxComponent1" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("21_66r1q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent1"]
 position = Vector2(-27, -38)
 shape = SubResource("RectangleShape2D_p6rjb")
 
@@ -151,8 +153,6 @@ script = ExtResource("23_d82g1")
 position = Vector2(-2.5, -38)
 shape = SubResource("RectangleShape2D_ank5r")
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="timeout" from="HurtTimer" to="." method="_on_hurt_timer_timeout"]
 [connection signal="onDamageTook" from="HealthComponent" to="." method="_on_health_component_on_damage_took"]
 [connection signal="onDead" from="HealthComponent" to="." method="_on_health_component_on_dead"]

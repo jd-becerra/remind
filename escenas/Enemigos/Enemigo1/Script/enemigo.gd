@@ -3,14 +3,17 @@ extends CharacterBody2D
 @export var knockback_force: float = 1
 @export var damage_blink_time: float = 0.3
 
+@onready var collision = $Collision
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var hurt_timer = $HurtTimer
+@onready var hitbox_component = $HitboxComponent
 @export var health_component: HealthComponentEnemy
 
 var gravity = 10
 var speed = -100
 var facing_right = false
 var is_hurt = false
+var is_dead = false
 
 func _ready():
 	animated_sprite.play("walk_left")
@@ -18,6 +21,11 @@ func _ready():
 func _physics_process(delta):
 	if is_hurt:
 		position.x = position.x + ((hurt_timer.get_time_left() * 5) * (-1 if facing_right else 1))
+		return
+	
+	if is_dead:
+		hitbox_component.monitoring = false
+		collision.disabled = true
 		return
 	
 	if  not is_on_floor():
@@ -45,13 +53,16 @@ func flip():
 	else:
 		speed = abs(speed) * -1
 
+
 func _on_health_component_on_dead() -> void:
-	queue_free()
+	animated_sprite.play("death")
+	is_dead = true
 
 
 func _on_health_component_on_damage_took() -> void:
 	is_hurt = true
-	hurt_timer.start()
+	if is_dead == false:
+		hurt_timer.start()
 	blink()
 
 func blink() -> void:
@@ -61,3 +72,8 @@ func blink() -> void:
 
 func _on_hurt_timer_timeout() -> void:
 	is_hurt = false
+
+
+func _on_animated_sprite_2d_animation_looped() -> void:
+		if is_dead:
+			queue_free()
