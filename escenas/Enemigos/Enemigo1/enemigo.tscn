@@ -104,10 +104,10 @@ animations = [{
 size = Vector2(27, 78.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6rjb"]
-size = Vector2(24, 78)
+size = Vector2(17, 78)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ank5r"]
-size = Vector2(73, 78)
+size = Vector2(66, 78)
 
 [node name="Enemigo" type="CharacterBody2D" groups=["enemigo"]]
 material = SubResource("ShaderMaterial_i657e")
@@ -139,7 +139,7 @@ collision_mask = 4
 script = ExtResource("21_66r1q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
-position = Vector2(-27, -38)
+position = Vector2(-23.5, -38)
 shape = SubResource("RectangleShape2D_p6rjb")
 
 [node name="HealthComponent" type="Area2D" parent="."]
@@ -148,7 +148,7 @@ collision_mask = 0
 script = ExtResource("23_d82g1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent"]
-position = Vector2(-2.5, -38)
+position = Vector2(1, -38)
 shape = SubResource("RectangleShape2D_ank5r")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
