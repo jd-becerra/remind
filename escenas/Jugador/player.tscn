@@ -155,8 +155,6 @@ shape = SubResource("RectangleShape2D_oqdox")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t5pkv")
 animation = &"Attack"
-frame = 8
-frame_progress = 1.0
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",

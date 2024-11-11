@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var move_speed: float = 200
+@export var run_speed: float = 300  # Velocidad de correr
 @export var jump_speed: float = 400
 @export var spawn_point: Vector2 = Vector2(121, 93)
 @export var max_fall_y: float = 600
@@ -13,7 +14,6 @@ var is_facing_right = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking = false
 
-
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -23,7 +23,6 @@ func _physics_process(delta):
 	if position.y > max_fall_y:
 		position = spawn_point
 		velocity = Vector2()
-
 	else:
 		jump()
 
@@ -45,11 +44,11 @@ func update_animations():
 		if velocity.y < 0:
 			animation.play("Jump")
 		else:
-			animation.play("Jump")  # De mientras, usamos la misma animación para saltar y caer
+			animation.play("Jump")  # Usamos la misma animación para saltar y caer
 		return
 	
 	if velocity.x != 0:
-		animation.play("Walk")
+		animation.play("Walk")  # Usamos la misma animación para caminar y correr
 	else:
 		animation.play("Idle")
 
@@ -64,7 +63,12 @@ func flip():
 
 func move_x():
 	var input_axis = Input.get_axis("move_left", "move_right")
-	velocity.x = input_axis * move_speed
+	
+	# Cambia la velocidad si se presiona la tecla de correr
+	if Input.is_action_pressed("run"):
+		velocity.x = input_axis * run_speed
+	else:
+		velocity.x = input_axis * move_speed
 
 func attack():
 	if Input.is_action_just_pressed("attack_knife") and not is_attacking:
@@ -83,7 +87,6 @@ func _on_attack_finished():
 func _on_health_component_on_dead() -> void:
 	position = spawn_point
 	health_component.set_health(3)
-
 
 func _on_health_component_on_damage_took() -> void:
 	pass # Replace with function body.
