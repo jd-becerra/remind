@@ -6405,6 +6405,7 @@ tile_map_data = PackedByteArray("AAACABcAAAAAAA0AAAACABgAAAAAAA4AAAACABkAAAAAAA8
 tile_set = SubResource("TileSet_keng6")
 
 [node name="Protagonista_Animacion" parent="." instance=ExtResource("7_g2jw8")]
+unique_name_in_owner = true
 z_index = 1
 position = Vector2(-2080, 395)
 sprite_frames = SubResource("SpriteFrames_wjpje")
@@ -6417,6 +6418,7 @@ unique_name_in_owner = true
 zoom = Vector2(2.3, 2.3)
 
 [node name="Player" parent="." instance=ExtResource("6_tvfj7")]
+unique_name_in_owner = true
 visible = false
 z_index = 1
 position = Vector2(344, 395)
@@ -6492,3 +6494,14 @@ position = Vector2(6524, 552)
 libraries = {
 "": SubResource("AnimationLibrary_lutah")
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Skip" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 938.0
+offset_top = 37.0
+offset_right = 1102.0
+offset_bottom = 68.0
+text = "SALTAR ANIMACION
+"
