@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="Remind"
-run/main_scene="res://escenas/Niveles/Nivel1/lvl_1.tscn"
+run/main_scene="res://escenas/Menu Principal/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
