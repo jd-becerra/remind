@@ -1,4 +1,7 @@
 extends Control
+@onready var game_over: AudioStreamPlayer = $GameOver
+
+
 
 func _on_btn_reiniciar_pressed() -> void:
 	# Reinicia la escena

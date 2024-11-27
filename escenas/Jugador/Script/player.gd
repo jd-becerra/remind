@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@onready var sonido_ataque: AudioStreamPlayer2D = $SonidoAtaque
+@onready var sonido_caminar: AudioStreamPlayer2D = $SonidoCaminar
+@onready var sonido_saltar: AudioStreamPlayer2D = $SonidoSaltar
 @export var move_speed: float = 200
 @export var run_speed: float = 300  # Velocidad de correr
 @export var jump_speed: float = 400
@@ -59,10 +62,13 @@ func update_animations():
 	if velocity.x != 0:
 		animation.play("Walk")  # Usamos la misma animación para caminar y correr
 	else:
+		sonido_caminar.play()
 		animation.play("Idle")
 
 func jump():
+	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		sonido_saltar.play()
 		velocity.y = -jump_speed
 
 func flip():
@@ -72,7 +78,6 @@ func flip():
 
 func move_x():
 	var input_axis = Input.get_axis("move_left", "move_right")
-	
 	# Cambia la velocidad si se presiona la tecla de correr
 	if Input.is_action_pressed("run"):
 		velocity.x = input_axis * run_speed
@@ -90,6 +95,7 @@ func attack():
 func _on_attack_finished():
 	is_attacking = false
 	attack_area.monitoring = false
+	sonido_ataque.play() 
 	attack_area.get_node("CollisionShape2D").disabled = true
 	animation.disconnect("animation_finished", Callable(self, "_on_attack_finished"))
 
@@ -98,6 +104,7 @@ func _on_health_component_on_dead() -> void:
 	health_component.set_health(3)
 	life_animation.play("3")
 	get_tree().change_scene_to_file("res://escenas/Menu Muerte/game_over.tscn")
+	
 func _on_health_component_on_damage_took() -> void:
 	if health_component.current_health == 2:
 		life_animation.play("2")

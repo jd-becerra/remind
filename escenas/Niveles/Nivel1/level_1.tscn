@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bojjm1ayv5537"]
+[gd_scene load_steps=6 format=3 uid="uid://bojjm1ayv5537"]
 
+[ext_resource type="Script" path="res://escenas/Niveles/Nivel1/level_1.gd" id="1_pl0lo"]
 [ext_resource type="PackedScene" uid="uid://bxft8i6fmnxwt" path="res://escenas/Jugador/player.tscn" id="1_sbwn3"]
 [ext_resource type="Texture2D" uid="uid://dp8728poneqkj" path="res://assets/plataformas/platform.png" id="2_j3lc7"]
 [ext_resource type="PackedScene" uid="uid://dotcm5old5v5e" path="res://escenas/Enemigos/Enemigo1/enemigo.tscn" id="3_qy4hi"]
@@ -9,6 +10,7 @@ size = Vector2(376, 32)
 
 [node name="TestRoom" type="Node2D"]
 position = Vector2(172, 269)
+script = ExtResource("1_pl0lo")
 
 [node name="JugadorSprite" parent="." instance=ExtResource("1_sbwn3")]
 position = Vector2(121, 93)

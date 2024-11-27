@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var knockback_force: float = 1
 @export var damage_blink_time: float = 0.3
 
+@onready var sonidoMuerte: AudioStreamPlayer2D = $MuerteEnemigo
 @onready var collision = $Collision
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var hurt_timer = $HurtTimer
@@ -57,6 +58,8 @@ func flip():
 func _on_health_component_on_dead() -> void:
 	animated_sprite.play("death")
 	is_dead = true
+	await get_tree().create_timer(0.3).timeout
+	sonidoMuerte.play() 
 
 
 func _on_health_component_on_damage_took() -> void:

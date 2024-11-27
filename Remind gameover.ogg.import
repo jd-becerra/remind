@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://snbj8mkkvmk4"
+path="res://.godot/imported/Remind gameover.ogg-02f9f09aa47f0dd2f39b7b852083b683.oggvorbisstr"
+
+[deps]
+
+source_file="res://Remind gameover.ogg"
+dest_files=["res://.godot/imported/Remind gameover.ogg-02f9f09aa47f0dd2f39b7b852083b683.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dobp2khlr1sg2"]
+[gd_scene load_steps=4 format=3 uid="uid://dobp2khlr1sg2"]
 
 [ext_resource type="Script" path="res://escenas/Menu Muerte/game_over.gd" id="1_sver5"]
 [ext_resource type="Texture2D" uid="uid://cgafhj8krca5h" path="res://ui/gameover.jpeg" id="2_mjnct"]
+[ext_resource type="AudioStream" uid="uid://snbj8mkkvmk4" path="res://Remind gameover.ogg" id="3_xgydi"]
 
 [node name="GameOver" type="Control"]
 process_mode = 3
@@ -41,6 +42,11 @@ theme_override_font_sizes/font_size = 30
 text = "Exit
 "
 metadata/_edit_use_anchors_ = true
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xgydi")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="btnReiniciar" to="." method="_on_btn_reiniciar_pressed"]
 [connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

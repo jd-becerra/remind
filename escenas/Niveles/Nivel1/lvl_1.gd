@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var musica_nivel1: AudioStreamPlayer = $NivelMusica
 @onready var camera_animation: Camera2D = %Camara_Animacion
 @onready var camera_player: Camera2D = %Camera_Jugador
 @onready var animation_player = $AnimationPlayer

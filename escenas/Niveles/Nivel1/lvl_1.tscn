@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://cdk2o6t2g5cha"]
+[gd_scene load_steps=57 format=4 uid="uid://cdk2o6t2g5cha"]
 
 [ext_resource type="Script" path="res://escenas/Niveles/Nivel1/lvl_1.gd" id="1_k7g18"]
 [ext_resource type="Texture2D" uid="uid://ckjighbojca6b" path="res://assets/BackGR/main_background.png" id="1_o5joc"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dotcm5old5v5e" path="res://escenas/Enemigos/Enemigo1/enemigo.tscn" id="10_0ykkk"]
 [ext_resource type="PackedScene" uid="uid://dagp4dw2n6xqg" path="res://escenas/Jugador/life.tscn" id="10_skqww"]
 [ext_resource type="Shader" path="res://shaders/dark_background.gdshader" id="11_4xft6"]
+[ext_resource type="AudioStream" uid="uid://dqvmeckarmhjp" path="res://Sonido ambiental op2.ogg" id="16_oglrk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_163pd"]
 texture = ExtResource("1_o5joc")
@@ -6509,3 +6510,9 @@ text = "SALTAR ANIMACION
 [node name="Life" parent="CanvasLayer" instance=ExtResource("10_skqww")]
 position = Vector2(1067, 30)
 scale = Vector2(2.5, 2.5)
+
+[node name="NivelMusica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_oglrk")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
