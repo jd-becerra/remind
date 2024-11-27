@@ -54,13 +54,11 @@ func flip():
 	else:
 		speed = abs(speed) * -1
 
-
 func _on_health_component_on_dead() -> void:
 	animated_sprite.play("death")
 	is_dead = true
 	await get_tree().create_timer(0.3).timeout
-	sonidoMuerte.play() 
-
+	sonidoMuerte.play()
 
 func _on_health_component_on_damage_took() -> void:
 	is_hurt = true
@@ -72,11 +70,10 @@ func blink() -> void:
 	animated_sprite.modulate.a = 0.5
 	await get_tree().create_timer(damage_blink_time).timeout
 	animated_sprite.modulate.a = 1
-
+ 
 func _on_hurt_timer_timeout() -> void:
 	is_hurt = false
 
-
 func _on_animated_sprite_2d_animation_looped() -> void:
-		if is_dead:
-			queue_free()
+	if is_dead:
+		queue_free()

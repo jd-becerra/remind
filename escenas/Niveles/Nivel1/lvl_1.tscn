@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://cdk2o6t2g5cha"]
+[gd_scene load_steps=70 format=4 uid="uid://cdk2o6t2g5cha"]
 
 [ext_resource type="Script" path="res://escenas/Niveles/Nivel1/lvl_1.gd" id="1_k7g18"]
 [ext_resource type="Texture2D" uid="uid://ckjighbojca6b" path="res://assets/BackGR/main_background.png" id="1_o5joc"]
@@ -6530,6 +6530,9 @@ _data = {
 "RESET": SubResource("Animation_lcbxn")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fucq5"]
+size = Vector2(181, 1201)
+
 [node name="Lvl1" type="Node2D"]
 script = ExtResource("1_k7g18")
 
@@ -6659,13 +6662,17 @@ visible = false
 position = Vector2(106, 60)
 scale = Vector2(1.83333, 1.97059)
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 944.0
-offset_top = 74.0
-offset_right = 1055.0
-offset_bottom = 144.0
+[node name="EnemigosCounter" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_bottom = 50.0
+grow_horizontal = 0
 theme_override_font_sizes/font_size = 35
-text = "0/11"
+text = "Enemigos: 0/11"
 
 [node name="Muerto" type="Sprite2D" parent="."]
 position = Vector2(-1109, 412)
@@ -6682,3 +6689,11 @@ unique_name_in_owner = true
 
 [node name="Sword" type="AudioStreamPlayer" parent="Sonidos" groups=["audio"]]
 stream = ExtResource("19_1o1mx")
+
+[node name="Barrera" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrera"]
+position = Vector2(80.5, 236.5)
+shape = SubResource("RectangleShape2D_fucq5")
