@@ -336,6 +336,7 @@ volume_db = -10.0
 
 [node name="SonidoCaminar" type="AudioStreamPlayer2D" parent="." groups=["audio"]]
 stream = ExtResource("6_ls855")
+volume_db = 20.0
 
 [node name="SonidoSaltar" type="AudioStreamPlayer2D" parent="." groups=["audio"]]
 stream = ExtResource("7_xkigv")
