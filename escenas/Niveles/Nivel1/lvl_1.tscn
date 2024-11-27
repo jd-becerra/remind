@@ -20,6 +20,8 @@
 [ext_resource type="AudioStream" uid="uid://dqvmeckarmhjp" path="res://Sonido ambiental op2.ogg" id="18_8ojrx"]
 [ext_resource type="Texture2D" uid="uid://lb4syeyeip2h" path="res://ui/settings_icon.png" id="18_ifg6d"]
 [ext_resource type="AudioStream" uid="uid://chbjhc4ms3w4g" path="res://Ataque.ogg" id="19_1o1mx"]
+[ext_resource type="AudioStream" uid="uid://dqykdq5ap4p46" path="res://Caminar.ogg" id="20_wwf7d"]
+[ext_resource type="AudioStream" uid="uid://dh5ycptm7hw7x" path="res://iorar2.ogg" id="21_gvnnc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_163pd"]
 texture = ExtResource("1_o5joc")
@@ -6485,6 +6487,30 @@ tracks/5/keys = {
 "update": 1,
 "values": [false, false, true, false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sonidos/Pisadas:playing")
+tracks/6/interp = 0
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 12.9333, 25.1333, 32.3667, 43.7667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sonidos/Llanto:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 27.1667, 29.9667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_lcbxn"]
 length = 0.001
@@ -6519,6 +6545,30 @@ tracks/2/path = NodePath("Sonidos/Sword:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sonidos/Pisadas:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sonidos/Llanto:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -6560,7 +6610,7 @@ z_index = 1
 position = Vector2(-2080, 395)
 sprite_frames = SubResource("SpriteFrames_2mrhv")
 animation = &"Look_Down"
-animation_name = "Cry_W_Sword"
+animation_name = "espada"
 metadata/_aseprite_wizard_source_file_hash_ = "351c5fa68043360a69d46ae09ef8815c"
 
 [node name="Camara_Animacion" type="Camera2D" parent="Protagonista_Animacion"]
@@ -6692,6 +6742,7 @@ texture = ExtResource("16_yc2u2")
 [node name="NivelMusica" type="AudioStreamPlayer" parent="." groups=["audio"]]
 unique_name_in_owner = true
 stream = ExtResource("18_8ojrx")
+volume_db = -5.0
 autoplay = true
 parameters/looping = true
 
