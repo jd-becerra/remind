@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://ds2omquarmmt1"]
+[gd_scene load_steps=3 format=3 uid="uid://y8j3xfbfe4m7"]
+
+[ext_resource type="Script" path="res://escenas/config.gd" id="1_agasr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p2xxb"]
 
 [node name="Config" type="Control"]
 layout_mode = 3
@@ -7,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_agasr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -17,7 +22,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Button" type="Button" parent="ColorRect"]
+[node name="Cancelar" type="Button" parent="ColorRect"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 209.0
 offset_top = 408.0
@@ -25,7 +31,8 @@ offset_right = 390.0
 offset_bottom = 499.0
 text = "CANCELAR"
 
-[node name="Button2" type="Button" parent="ColorRect"]
+[node name="Guardar" type="Button" parent="ColorRect"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 655.0
 offset_top = 405.0
@@ -33,20 +40,22 @@ offset_right = 879.0
 offset_bottom = 494.0
 text = "GUARDAR CAMBIOS"
 
-[node name="CheckButton" type="CheckButton" parent="ColorRect"]
+[node name="FullBtn" type="CheckButton" parent="ColorRect"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 0
-offset_left = 579.0
-offset_top = 213.0
-offset_right = 675.0
-offset_bottom = 309.0
+offset_left = 566.0
+offset_top = 199.0
+offset_right = 662.0
+offset_bottom = 295.0
+scale = Vector2(1.58833, 1.69988)
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 206.0
-offset_top = 236.0
-offset_right = 535.0
-offset_bottom = 336.0
+offset_left = 204.0
+offset_top = 257.0
+offset_right = 533.0
+offset_bottom = 357.0
 theme_override_font_sizes/font_size = 35
 text = "Pantalla Completa"
 
@@ -59,20 +68,36 @@ offset_bottom = 232.0
 theme_override_font_sizes/font_size = 35
 text = "Volumen"
 
-[node name="Button3" type="Button" parent="ColorRect"]
+[node name="Plus" type="Button" parent="ColorRect"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 551.0
-offset_top = 128.0
-offset_right = 613.0
-offset_bottom = 199.0
+offset_left = 707.0
+offset_top = 125.0
+offset_right = 769.0
+offset_bottom = 196.0
 theme_override_font_sizes/font_size = 45
 text = "+"
 
-[node name="Button4" type="Button" parent="ColorRect"]
+[node name="Min" type="Button" parent="ColorRect"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 696.0
-offset_top = 130.0
-offset_right = 758.0
-offset_bottom = 201.0
+offset_left = 553.0
+offset_top = 122.0
+offset_right = 598.0
+offset_bottom = 193.0
 theme_override_font_sizes/font_size = 45
 text = "-"
+
+[node name="VolumenTxt" type="TextEdit" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 617.0
+offset_top = 134.0
+offset_right = 712.0
+offset_bottom = 194.0
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p2xxb")
+text = "100%"
+editable = false

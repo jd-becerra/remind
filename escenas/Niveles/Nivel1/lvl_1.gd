@@ -20,11 +20,14 @@ func _ready() -> void:
 	camera_player.enabled = false
 
 	animation_player.animation_finished.connect(_on_inicio_animation_finished)
+	%ConfigBtn.pressed.connect(_on_config_pressed)
 	
 func _physics_process(_delta: float) -> void:
 	enemycounter = currentenemycounter - $Enemigos.get_child_count()
 	print(enemycounter)
 	counter.text = str(enemycounter) + "/11"
+	if enemycounter == 11:
+		get_tree().change_scene_to_file("res://escenas/Menu Muerte/victory.tscn")
 	
 
 func _on_inicio_animation_finished(_anim_name) -> void:
@@ -43,3 +46,7 @@ func _on_skip_pressed() -> void:
 	# Jump to the end of the animation
 	var anim_len = animation_player.current_animation_length
 	animation_player.seek(anim_len - 0.1, true)
+
+func _on_config_pressed() -> void:
+	%ConfigMenu.show()
+	get_tree().paused = true	
