@@ -16,15 +16,13 @@ extends CharacterBody2D
 var is_facing_right = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking = false
-@onready var life_animation: AnimatedSprite2D = get_node("/root/CanvasLayer/Life/AnimatedSprite2D")
+@onready var life_animation: AnimatedSprite2D = get_node("/root/CanvasLayer/Life")
 
 
 func _ready():
 	var life_scene = preload("res://escenas/Jugador/life.tscn")  # Carga la escena como PackedScene
 	var life_instance = life_scene.instantiate()  # Usa 'instantiate()' en lugar de 'instance()'
 	life_animation = life_instance as AnimatedSprite2D  # Asegúrate de que la instancia sea de tipo AnimatedSprite2D
-
-
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -66,7 +64,6 @@ func update_animations():
 		animation.play("Idle")
 
 func jump():
-	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		sonido_saltar.play()
 		velocity.y = -jump_speed
@@ -103,6 +100,9 @@ func _on_health_component_on_dead() -> void:
 	position = spawn_point
 	health_component.set_health(3)
 	life_animation.play("3")
+	call_deferred("_change_to_game_over_scene")
+
+func _change_to_game_over_scene():
 	get_tree().change_scene_to_file("res://escenas/Menu Muerte/game_over.tscn")
 	
 func _on_health_component_on_damage_took() -> void:

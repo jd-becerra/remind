@@ -451,6 +451,7 @@ script = ExtResource("21_66r1q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(-23.5, -38)
 shape = SubResource("RectangleShape2D_p6rjb")
+one_way_collision = true
 
 [node name="HealthComponent" type="Area2D" parent="."]
 collision_layer = 2
@@ -461,7 +462,7 @@ script = ExtResource("23_d82g1")
 position = Vector2(1, -38)
 shape = SubResource("RectangleShape2D_ank5r")
 
-[node name="MuerteEnemigo" type="AudioStreamPlayer2D" parent="."]
+[node name="MuerteEnemigo" type="AudioStreamPlayer2D" parent="." groups=["audio"]]
 stream = ExtResource("6_j7ppe")
 volume_db = -10.0
 

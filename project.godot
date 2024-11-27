@@ -32,6 +32,10 @@ movie_writer/movie_file="C:/Users/david/OneDrive/Documentos/remind_record.avi"
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
 
+[global_group]
+
+audio=""
+
 [input]
 
 move_left={

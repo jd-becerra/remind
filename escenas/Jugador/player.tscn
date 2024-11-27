@@ -330,14 +330,14 @@ script = ExtResource("4_csamu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent"]
 shape = SubResource("CapsuleShape2D_ibrq8")
 
-[node name="SonidoAtaque" type="AudioStreamPlayer2D" parent="."]
+[node name="SonidoAtaque" type="AudioStreamPlayer2D" parent="." groups=["audio"]]
 stream = ExtResource("5_yrayd")
 volume_db = -10.0
 
-[node name="SonidoCaminar" type="AudioStreamPlayer2D" parent="."]
+[node name="SonidoCaminar" type="AudioStreamPlayer2D" parent="." groups=["audio"]]
 stream = ExtResource("6_ls855")
 
-[node name="SonidoSaltar" type="AudioStreamPlayer2D" parent="."]
+[node name="SonidoSaltar" type="AudioStreamPlayer2D" parent="." groups=["audio"]]
 stream = ExtResource("7_xkigv")
 
 [connection signal="onDamageTook" from="HealthComponent" to="." method="_on_health_component_on_damage_took"]
