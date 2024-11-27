@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://cdk2o6t2g5cha"]
+[gd_scene load_steps=72 format=4 uid="uid://cdk2o6t2g5cha"]
 
 [ext_resource type="Script" path="res://escenas/Niveles/Nivel1/lvl_1.gd" id="1_k7g18"]
 [ext_resource type="Texture2D" uid="uid://ckjighbojca6b" path="res://assets/BackGR/main_background.png" id="1_o5joc"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://chbjhc4ms3w4g" path="res://Ataque.ogg" id="19_1o1mx"]
 [ext_resource type="AudioStream" uid="uid://dqykdq5ap4p46" path="res://Caminar.ogg" id="20_wwf7d"]
 [ext_resource type="AudioStream" uid="uid://dh5ycptm7hw7x" path="res://iorar2.ogg" id="21_gvnnc"]
+[ext_resource type="PackedScene" uid="uid://y8j3xfbfe4m7" path="res://escenas/config.tscn" id="19_bljxe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_163pd"]
 texture = ExtResource("1_o5joc")
@@ -6709,6 +6710,7 @@ text = "SALTAR ANIMACION
 
 [node name="Life" parent="CanvasLayer" instance=ExtResource("17_j1ka8")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(106, 60)
 scale = Vector2(1.83333, 1.97059)
 
@@ -6734,6 +6736,11 @@ offset_right = 1263.0
 offset_bottom = 180.0
 scale = Vector2(0.243776, 0.24)
 icon = ExtResource("18_ifg6d")
+
+[node name="ConfigMenu" parent="CanvasLayer" instance=ExtResource("19_bljxe")]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
 
 [node name="Muerto" type="Sprite2D" parent="."]
 position = Vector2(-1109, 412)
