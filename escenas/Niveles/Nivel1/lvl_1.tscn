@@ -6655,7 +6655,6 @@ text = "SALTAR ANIMACION
 
 [node name="Life" parent="CanvasLayer" instance=ExtResource("17_j1ka8")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(106, 60)
 scale = Vector2(1.83333, 1.97059)
 
