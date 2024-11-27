@@ -31,9 +31,10 @@ func _on_inicio_animation_finished(_anim_name) -> void:
 	# Set camera_player as the current camera
 	camera_animation.enabled = false
 	camera_player.enabled = true
-	%Protagonista_Animacion.visible = false
-	%Skip.visible = false
-	%Player.visible = true
+	%Protagonista_Animacion.hide()
+	%Skip.hide()
+	%Player.show()
+	%Life.show()
 
 func _on_skip_pressed() -> void:
 	# Jump to the end of the animation
