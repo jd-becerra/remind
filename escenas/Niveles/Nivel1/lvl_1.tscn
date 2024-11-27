@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://cdk2o6t2g5cha"]
+[gd_scene load_steps=74 format=4 uid="uid://cdk2o6t2g5cha"]
 
 [ext_resource type="Script" path="res://escenas/Niveles/Nivel1/lvl_1.gd" id="1_k7g18"]
 [ext_resource type="Texture2D" uid="uid://ckjighbojca6b" path="res://assets/BackGR/main_background.png" id="1_o5joc"]
@@ -6735,6 +6735,11 @@ offset_right = 1263.0
 offset_bottom = 180.0
 scale = Vector2(0.243776, 0.24)
 icon = ExtResource("18_ifg6d")
+
+[node name="ConfigMenu" parent="CanvasLayer" instance=ExtResource("19_bljxe")]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
 
 [node name="Muerto" type="Sprite2D" parent="."]
 position = Vector2(-1109, 412)
