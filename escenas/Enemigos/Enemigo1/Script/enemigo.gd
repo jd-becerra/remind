@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var damage_blink_time: float = 0.3
 
 @onready var sonidoMuerte: AudioStreamPlayer2D = $MuerteEnemigo
+@onready var sonidoNormal: AudioStreamPlayer2D = $SonidoRugido
 @onready var collision = $Collision
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var hurt_timer = $HurtTimer
@@ -40,7 +41,8 @@ func _physics_process(delta):
 	if collider is Node:
 		if collider.is_in_group("Enemigo"):
 			flip()
-	
+	if not %SonidoRugido.is_playing():
+		%SonidoRugido.play() 
 	velocity.x = speed
 	move_and_slide() 
 

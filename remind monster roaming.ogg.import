@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://brj8d01ug8vbe"
+path="res://.godot/imported/remind monster roaming.ogg-6277dc7c4091ffbdc56702ad36a8978d.oggvorbisstr"
+
+[deps]
+
+source_file="res://remind monster roaming.ogg"
+dest_files=["res://.godot/imported/remind monster roaming.ogg-6277dc7c4091ffbdc56702ad36a8978d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
