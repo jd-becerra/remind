@@ -6632,6 +6632,14 @@ text = "SALTAR ANIMACION
 position = Vector2(106, 60)
 scale = Vector2(1.83333, 1.97059)
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 944.0
+offset_top = 74.0
+offset_right = 1055.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 35
+text = "0/11"
+
 [node name="Muerto" type="Sprite2D" parent="."]
 position = Vector2(-1109, 412)
 texture = ExtResource("16_yc2u2")
