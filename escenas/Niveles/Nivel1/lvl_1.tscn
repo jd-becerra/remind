@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://cdk2o6t2g5cha"]
+[gd_scene load_steps=56 format=4 uid="uid://cdk2o6t2g5cha"]
 
 [ext_resource type="Script" path="res://escenas/Niveles/Nivel1/lvl_1.gd" id="1_k7g18"]
 [ext_resource type="Texture2D" uid="uid://ckjighbojca6b" path="res://assets/BackGR/main_background.png" id="1_o5joc"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://wjv8fy4gektw" path="res://escenas/Niveles/Nivel1/protagonista.png" id="8_roiuy"]
 [ext_resource type="Texture2D" uid="uid://b3hilitxhqmxl" path="res://assets/plataformas/Tiles.png" id="9_43405"]
 [ext_resource type="PackedScene" uid="uid://dotcm5old5v5e" path="res://escenas/Enemigos/Enemigo1/enemigo.tscn" id="10_0ykkk"]
+[ext_resource type="PackedScene" uid="uid://dagp4dw2n6xqg" path="res://escenas/Jugador/life.tscn" id="10_skqww"]
 [ext_resource type="Shader" path="res://shaders/dark_background.gdshader" id="11_4xft6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_163pd"]
@@ -6499,9 +6500,13 @@ libraries = {
 
 [node name="Skip" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 938.0
-offset_top = 37.0
-offset_right = 1102.0
-offset_bottom = 68.0
+offset_left = 955.0
+offset_top = 58.0
+offset_right = 1119.0
+offset_bottom = 89.0
 text = "SALTAR ANIMACION
 "
+
+[node name="Life" parent="CanvasLayer" instance=ExtResource("10_skqww")]
+position = Vector2(1067, 30)
+scale = Vector2(2.5, 2.5)

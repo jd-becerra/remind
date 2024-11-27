@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://dagp4dw2n6xqg"]
+
+[ext_resource type="Texture2D" uid="uid://b6oqoyiwvmvn2" path="res://assets/personajes/Life.png" id="1_inawr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b076"]
+atlas = ExtResource("1_inawr")
+region = Rect2(0, 0, 51, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghuwl"]
+atlas = ExtResource("1_inawr")
+region = Rect2(51, 0, 51, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3kks"]
+atlas = ExtResource("1_inawr")
+region = Rect2(102, 0, 51, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe0se"]
+atlas = ExtResource("1_inawr")
+region = Rect2(153, 0, 51, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67hp8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b076")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghuwl")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3kks")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe0se")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
+[node name="Life" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_67hp8")
+animation = &"3"
