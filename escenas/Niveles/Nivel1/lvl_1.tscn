@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://cdk2o6t2g5cha"]
+[gd_scene load_steps=69 format=4 uid="uid://cdk2o6t2g5cha"]
 
 [ext_resource type="Script" path="res://escenas/Niveles/Nivel1/lvl_1.gd" id="1_k7g18"]
 [ext_resource type="Texture2D" uid="uid://ckjighbojca6b" path="res://assets/BackGR/main_background.png" id="1_o5joc"]
@@ -17,7 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://cmghwystsg12g" path="res://assets/personajes/muerto.png" id="15_jbtn1"]
 [ext_resource type="Texture2D" uid="uid://c5jb8ubm3ev70" path="res://assets/personajes/muerto_sin_espada.png" id="16_yc2u2"]
 [ext_resource type="PackedScene" uid="uid://cmhjutjywnb27" path="res://escenas/Jugador/life.tscn" id="17_j1ka8"]
-[ext_resource type="AudioStream" uid="uid://birl7jn6ran7v" path="res://escenas/Menu Principal/art/musica.mp3" id="17_pu4ya"]
+[ext_resource type="AudioStream" uid="uid://dqvmeckarmhjp" path="res://Sonido ambiental op2.ogg" id="18_8ojrx"]
+[ext_resource type="AudioStream" uid="uid://chbjhc4ms3w4g" path="res://Ataque.ogg" id="19_1o1mx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_163pd"]
 texture = ExtResource("1_o5joc")
@@ -6471,6 +6472,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ExtResource("15_jbtn1"), ExtResource("15_jbtn1"), ExtResource("16_yc2u2")]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sonidos/Sword:playing")
+tracks/5/interp = 0
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 29.9333, 29.9667, 31),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_lcbxn"]
 length = 0.001
@@ -6497,6 +6510,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1.5, 1.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sonidos/Sword:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lutah"]
@@ -6531,7 +6556,7 @@ z_index = 1
 position = Vector2(-2080, 395)
 sprite_frames = SubResource("SpriteFrames_2mrhv")
 animation = &"Look_Down"
-animation_name = "Walk"
+animation_name = "Cry_W_Sword"
 metadata/_aseprite_wizard_source_file_hash_ = "351c5fa68043360a69d46ae09ef8815c"
 
 [node name="Camara_Animacion" type="Camera2D" parent="Protagonista_Animacion"]
@@ -6629,6 +6654,8 @@ text = "SALTAR ANIMACION
 "
 
 [node name="Life" parent="CanvasLayer" instance=ExtResource("17_j1ka8")]
+unique_name_in_owner = true
+visible = false
 position = Vector2(106, 60)
 scale = Vector2(1.83333, 1.97059)
 
@@ -6638,4 +6665,12 @@ texture = ExtResource("16_yc2u2")
 
 [node name="NivelMusica" type="AudioStreamPlayer" parent="." groups=["audio"]]
 unique_name_in_owner = true
-stream = ExtResource("17_pu4ya")
+stream = ExtResource("18_8ojrx")
+autoplay = true
+parameters/looping = true
+
+[node name="Sonidos" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Sword" type="AudioStreamPlayer" parent="Sonidos" groups=["audio"]]
+stream = ExtResource("19_1o1mx")
