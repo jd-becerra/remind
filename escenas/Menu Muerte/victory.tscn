@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://crv2fq284sjuy"]
+[gd_scene load_steps=4 format=3 uid="uid://crv2fq284sjuy"]
 
 [ext_resource type="Texture2D" uid="uid://wfyelm4juenr" path="res://ui/victoryimage.png" id="1_ecvqo"]
 [ext_resource type="Script" path="res://escenas/Menu Muerte/victory.gd" id="1_o240x"]
+[ext_resource type="AudioStream" uid="uid://clpcy1j4t73bk" path="res://victory.ogg" id="3_1me83"]
 
 [node name="Victory" type="Control"]
 layout_mode = 3
@@ -36,6 +37,8 @@ theme_override_font_sizes/font_size = 40
 text = "Exit"
 
 [node name="SonidoVictoria" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1me83")
+autoplay = true
 
 [connection signal="pressed" from="btnReiniciar" to="." method="_on_btn_reiniciar_pressed"]
 [connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

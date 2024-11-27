@@ -1,4 +1,5 @@
 extends Control
+@onready var victoria: AudioStreamPlayer = $SonidoVictoria
 
 func _on_btn_reiniciar_pressed() -> void:
 	# Reinicia la escena
