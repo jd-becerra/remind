@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://cdk2o6t2g5cha"]
+[gd_scene load_steps=71 format=4 uid="uid://cdk2o6t2g5cha"]
 
 [ext_resource type="Script" path="res://escenas/Niveles/Nivel1/lvl_1.gd" id="1_k7g18"]
 [ext_resource type="Texture2D" uid="uid://ckjighbojca6b" path="res://assets/BackGR/main_background.png" id="1_o5joc"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c5jb8ubm3ev70" path="res://assets/personajes/muerto_sin_espada.png" id="16_yc2u2"]
 [ext_resource type="PackedScene" uid="uid://cmhjutjywnb27" path="res://escenas/Jugador/life.tscn" id="17_j1ka8"]
 [ext_resource type="AudioStream" uid="uid://dqvmeckarmhjp" path="res://Sonido ambiental op2.ogg" id="18_8ojrx"]
+[ext_resource type="Texture2D" uid="uid://lb4syeyeip2h" path="res://ui/settings_icon.png" id="18_ifg6d"]
 [ext_resource type="AudioStream" uid="uid://chbjhc4ms3w4g" path="res://Ataque.ogg" id="19_1o1mx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_163pd"]
@@ -6649,10 +6650,10 @@ libraries = {
 
 [node name="Skip" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 938.0
-offset_top = 37.0
-offset_right = 1102.0
-offset_bottom = 68.0
+offset_left = 916.0
+offset_top = 17.0
+offset_right = 1080.0
+offset_bottom = 48.0
 text = "SALTAR ANIMACION
 "
 
@@ -6667,11 +6668,22 @@ visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -111.0
-offset_bottom = 50.0
+offset_left = -395.0
+offset_top = 5.0
+offset_right = -140.0
+offset_bottom = 55.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 35
 text = "Enemigos: 0/11"
+
+[node name="ConfigBtn" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 1095.0
+offset_top = 12.0
+offset_right = 1263.0
+offset_bottom = 180.0
+scale = Vector2(0.243776, 0.24)
+icon = ExtResource("18_ifg6d")
 
 [node name="Muerto" type="Sprite2D" parent="."]
 position = Vector2(-1109, 412)
