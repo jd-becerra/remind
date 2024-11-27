@@ -433,6 +433,7 @@ frame_progress = 0.436544
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(-4.5, -37.75)
 shape = SubResource("RectangleShape2D_cfc6h")
+one_way_collision = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-42, -82)
@@ -451,7 +452,6 @@ script = ExtResource("21_66r1q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(-23.5, -38)
 shape = SubResource("RectangleShape2D_p6rjb")
-one_way_collision = true
 
 [node name="HealthComponent" type="Area2D" parent="."]
 collision_layer = 2

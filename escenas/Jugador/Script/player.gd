@@ -16,13 +16,7 @@ extends CharacterBody2D
 var is_facing_right = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking = false
-@onready var life_animation: AnimatedSprite2D = get_node("/root/CanvasLayer/Life")
-
-
-func _ready():
-	var life_scene = preload("res://escenas/Jugador/life.tscn")  # Carga la escena como PackedScene
-	var life_instance = life_scene.instantiate()  # Usa 'instantiate()' en lugar de 'instance()'
-	life_animation = life_instance as AnimatedSprite2D  # Asegúrate de que la instancia sea de tipo AnimatedSprite2D
+@onready var life_animation: AnimatedSprite2D = get_tree().get_root().get_node("/root/Lvl1/CanvasLayer/Life")
 
 func _physics_process(delta):
 	if not is_on_floor():
