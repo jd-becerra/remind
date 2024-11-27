@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c5jb8ubm3ev70" path="res://assets/personajes/muerto_sin_espada.png" id="16_yc2u2"]
 [ext_resource type="PackedScene" uid="uid://cmhjutjywnb27" path="res://escenas/Jugador/life.tscn" id="17_j1ka8"]
 [ext_resource type="AudioStream" uid="uid://dqvmeckarmhjp" path="res://Sonido ambiental op2.ogg" id="18_8ojrx"]
+[ext_resource type="Texture2D" uid="uid://lb4syeyeip2h" path="res://ui/settings_icon.png" id="18_ifg6d"]
 [ext_resource type="AudioStream" uid="uid://chbjhc4ms3w4g" path="res://Ataque.ogg" id="19_1o1mx"]
 [ext_resource type="AudioStream" uid="uid://dqykdq5ap4p46" path="res://Caminar.ogg" id="20_wwf7d"]
 [ext_resource type="AudioStream" uid="uid://dh5ycptm7hw7x" path="res://iorar2.ogg" id="21_gvnnc"]
@@ -6580,6 +6581,9 @@ _data = {
 "RESET": SubResource("Animation_lcbxn")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fucq5"]
+size = Vector2(181, 1201)
+
 [node name="Lvl1" type="Node2D"]
 script = ExtResource("1_k7g18")
 
@@ -6696,26 +6700,40 @@ libraries = {
 
 [node name="Skip" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 938.0
-offset_top = 37.0
-offset_right = 1102.0
-offset_bottom = 68.0
+offset_left = 916.0
+offset_top = 17.0
+offset_right = 1080.0
+offset_bottom = 48.0
 text = "SALTAR ANIMACION
 "
 
 [node name="Life" parent="CanvasLayer" instance=ExtResource("17_j1ka8")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(106, 60)
 scale = Vector2(1.83333, 1.97059)
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 944.0
-offset_top = 74.0
-offset_right = 1055.0
-offset_bottom = 144.0
+[node name="EnemigosCounter" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -395.0
+offset_top = 5.0
+offset_right = -140.0
+offset_bottom = 55.0
+grow_horizontal = 0
 theme_override_font_sizes/font_size = 35
-text = "0/11"
+text = "Enemigos: 0/11"
+
+[node name="ConfigBtn" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 1095.0
+offset_top = 12.0
+offset_right = 1263.0
+offset_bottom = 180.0
+scale = Vector2(0.243776, 0.24)
+icon = ExtResource("18_ifg6d")
 
 [node name="Muerto" type="Sprite2D" parent="."]
 position = Vector2(-1109, 412)
@@ -6734,8 +6752,10 @@ unique_name_in_owner = true
 [node name="Sword" type="AudioStreamPlayer" parent="Sonidos" groups=["audio"]]
 stream = ExtResource("19_1o1mx")
 
-[node name="Pisadas" type="AudioStreamPlayer" parent="Sonidos" groups=["audio"]]
-stream = ExtResource("20_wwf7d")
+[node name="Barrera" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+visible = false
 
-[node name="Llanto" type="AudioStreamPlayer" parent="Sonidos"]
-stream = ExtResource("21_gvnnc")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrera"]
+position = Vector2(80.5, 236.5)
+shape = SubResource("RectangleShape2D_fucq5")

@@ -6,7 +6,7 @@ extends Node2D
 @onready var animation_player = $AnimationPlayer
 var enemycounter
 var currentenemycounter = 11
-@onready var EnemycounterLabel = $CanvasLayer/Label
+@onready var counter = $CanvasLayer/EnemigosCounter
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,20 +21,23 @@ func _ready() -> void:
 
 	animation_player.animation_finished.connect(_on_inicio_animation_finished)
 	
-func _physics_process(float) -> void:
+func _physics_process(_delta: float) -> void:
 	enemycounter = currentenemycounter - $Enemigos.get_child_count()
 	print(enemycounter)
-	EnemycounterLabel.text = str(enemycounter) + "/11"
+	counter.text = str(enemycounter) + "/11"
 	
 
 func _on_inicio_animation_finished(_anim_name) -> void:
 	# Set camera_player as the current camera
 	camera_animation.enabled = false
 	camera_player.enabled = true
+	counter.show()
 	%Protagonista_Animacion.hide()
 	%Skip.hide()
 	%Player.show()
 	%Life.show()
+
+	%Barrera.show()
 
 func _on_skip_pressed() -> void:
 	# Jump to the end of the animation

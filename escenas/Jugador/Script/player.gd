@@ -16,7 +16,7 @@ extends CharacterBody2D
 var is_facing_right = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking = false
-@onready var life_animation: AnimatedSprite2D = get_tree().get_root().get_node("/root/Lvl1/CanvasLayer/Life")
+@onready var life_animation: AnimatedSprite2D = get_tree().get_root().get_node("/root/Lvl1").get_node("%Life")
 
 func _physics_process(delta):
 	if not is_on_floor():

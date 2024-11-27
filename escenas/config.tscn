@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://ds2omquarmmt1"]
+
+[node name="Config" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 408.0
+offset_right = 390.0
+offset_bottom = 499.0
+text = "CANCELAR"
+
+[node name="Button2" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 655.0
+offset_top = 405.0
+offset_right = 879.0
+offset_bottom = 494.0
+text = "GUARDAR CAMBIOS"
+
+[node name="CheckButton" type="CheckButton" parent="ColorRect"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 0
+offset_left = 579.0
+offset_top = 213.0
+offset_right = 675.0
+offset_bottom = 309.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 236.0
+offset_right = 535.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 35
+text = "Pantalla Completa"
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 132.0
+offset_right = 533.0
+offset_bottom = 232.0
+theme_override_font_sizes/font_size = 35
+text = "Volumen"
+
+[node name="Button3" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 128.0
+offset_right = 613.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 45
+text = "+"
+
+[node name="Button4" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 130.0
+offset_right = 758.0
+offset_bottom = 201.0
+theme_override_font_sizes/font_size = 45
+text = "-"
