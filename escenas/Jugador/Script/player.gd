@@ -97,6 +97,7 @@ func _on_health_component_on_dead() -> void:
 	position = spawn_point
 	health_component.set_health(3)
 	life_animation.play("3")
+	get_tree().change_scene_to_file("res://escenas/Menu Muerte/game_over.tscn")
 func _on_health_component_on_damage_took() -> void:
 	if health_component.current_health == 2:
 		life_animation.play("2")

@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dobp2khlr1sg2"]
+
+[ext_resource type="Script" path="res://escenas/Menu Muerte/game_over.gd" id="1_sver5"]
+[ext_resource type="Texture2D" uid="uid://cgafhj8krca5h" path="res://ui/gameover.jpeg" id="2_mjnct"]
+
+[node name="GameOver" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sver5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(572, 322.5)
+scale = Vector2(2.24609, 1.27148)
+texture = ExtResource("2_mjnct")
+metadata/_edit_use_anchors_ = true
+
+[node name="btnReiniciar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.169271
+anchor_top = 0.834877
+anchor_right = 0.356771
+anchor_bottom = 0.945988
+theme_override_font_sizes/font_size = 30
+text = "Retry"
+metadata/_edit_use_anchors_ = true
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.579861
+anchor_top = 0.83642
+anchor_right = 0.767361
+anchor_bottom = 0.947531
+theme_override_font_sizes/font_size = 30
+text = "Exit
+"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="btnReiniciar" to="." method="_on_btn_reiniciar_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]
