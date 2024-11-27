@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj7ch5dnbp8fw"]
+
+[ext_resource type="Texture2D" uid="uid://wfyelm4juenr" path="res://ui/victoryimage.png" id="1_ecvqo"]
+[ext_resource type="Script" path="res://escenas/Menu Muerte/victory.gd" id="1_o240x"]
+
+[node name="Victory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o240x")
+
+[node name="Victoryimage" type="Sprite2D" parent="."]
+position = Vector2(573.187, 328.5)
+scale = Vector2(1.12463, 0.635742)
+texture = ExtResource("1_ecvqo")
+
+[node name="btnReiniciar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 561.0
+offset_right = 457.0
+offset_bottom = 618.0
+theme_override_font_sizes/font_size = 40
+text = "Retry"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 552.0
+offset_right = 944.0
+offset_bottom = 620.0
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+
+[connection signal="pressed" from="btnReiniciar" to="." method="_on_btn_reiniciar_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]
