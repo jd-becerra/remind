@@ -20,7 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://dqvmeckarmhjp" path="res://Sonido ambiental op2.ogg" id="18_8ojrx"]
 [ext_resource type="Texture2D" uid="uid://lb4syeyeip2h" path="res://ui/settings_icon.png" id="18_ifg6d"]
 [ext_resource type="AudioStream" uid="uid://chbjhc4ms3w4g" path="res://Ataque.ogg" id="19_1o1mx"]
-[ext_resource type="PackedScene" path="res://escenas/config.tscn" id="19_bljxe"]
+[ext_resource type="PackedScene" uid="uid://y8j3xfbfe4m7" path="res://escenas/config.tscn" id="19_bljxe"]
 [ext_resource type="AudioStream" uid="uid://dh5ycptm7hw7x" path="res://iorar2.ogg" id="21_vlp7d"]
 [ext_resource type="AudioStream" uid="uid://dqykdq5ap4p46" path="res://Caminar.ogg" id="22_pa1ek"]
 
