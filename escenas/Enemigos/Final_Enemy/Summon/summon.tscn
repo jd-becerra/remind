@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dhkoftmg6nwaq"]
+[gd_scene load_steps=24 format=3 uid="uid://dhkoftmg6nwaq"]
 
 [ext_resource type="Script" path="res://escenas/Enemigos/Final_Enemy/Summon/proyectile.gd" id="1_pkeyu"]
 [ext_resource type="Texture2D" uid="uid://dytj8pe3o28c4" path="res://assets/personajes/enemigos/Final_Enemy/Summon/summonAppear.png" id="1_ufmaf"]
@@ -139,6 +139,10 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iv0bx"]
+radius = 6.0
+height = 20.0
+
 [node name="Summon" type="CharacterBody2D"]
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
@@ -146,9 +150,16 @@ script = ExtResource("1_pkeyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qga3c")
+disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -4)
 sprite_frames = SubResource("SpriteFrames_2keea")
 animation = &"Iddle"
 frame_progress = 0.728992
+
+[node name="Bullet" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+shape = SubResource("CapsuleShape2D_iv0bx")

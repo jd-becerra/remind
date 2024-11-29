@@ -309,7 +309,6 @@ script = ExtResource("1_ohh5o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-28.2, -45)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8jnq5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -342,7 +341,6 @@ script = ExtResource("7_257pa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponentEnemy"]
 position = Vector2(-9.2, 13.4)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_8lwuv")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitboxComponentEnemy"]

@@ -111,6 +111,10 @@ func _on_health_component_on_damage_took() -> void:
 	elif health_component.current_health == 0:
 		life_animation.play("0")
 
+	self.modulate = Color(1, 0.5, 0.5)
+	await get_tree().create_timer(0.1).timeout
+	self.modulate = Color(1, 1, 1)
+
 func _input(event: InputEvent) -> void:
 	# Check if the secret code was entered (it accepts when the code is entered in the correct order)
 	if event is InputEventKey and event.pressed:
