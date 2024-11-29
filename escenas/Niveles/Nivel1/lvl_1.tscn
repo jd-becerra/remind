@@ -25,7 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://dqykdq5ap4p46" path="res://Caminar.ogg" id="22_pa1ek"]
 [ext_resource type="PackedScene" uid="uid://qba8kpgdfafc" path="res://escenas/Enemigos/Final_Enemy/final_enemy.tscn" id="24_uiq6k"]
 [ext_resource type="PackedScene" uid="uid://b4yi1rginuomd" path="res://heart_pickup.tscn" id="25_fhhdo"]
-[ext_resource type="PackedScene" path="res://boss_music.tscn" id="26_guhee"]
+[ext_resource type="PackedScene" uid="uid://d0mmvyrghjgvm" path="res://boss_music.tscn" id="26_guhee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_163pd"]
 texture = ExtResource("1_o5joc")

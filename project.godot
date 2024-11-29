@@ -23,7 +23,6 @@ Globals="*res://escenas/globals.gd"
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_height"
 
 [editor]
 

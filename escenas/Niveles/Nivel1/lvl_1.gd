@@ -31,7 +31,7 @@ func _ready() -> void:
 	
 func _physics_process(_delta: float) -> void:
 	enemycounter = currentenemycounter - $Enemigos.get_child_count()
-	counter.text = str(enemycounter) + "/11"
+	counter.text = str(enemycounter) + "/12"
 	if enemycounter == 11:
 		get_tree().change_scene_to_file("res://escenas/Menu Muerte/victory.tscn")
 	

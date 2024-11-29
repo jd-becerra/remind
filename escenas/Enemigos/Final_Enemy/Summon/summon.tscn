@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://dhkoftmg6nwaq"]
+[gd_scene load_steps=27 format=3 uid="uid://dhkoftmg6nwaq"]
 
 [ext_resource type="Script" path="res://escenas/Enemigos/Final_Enemy/Summon/proyectile.gd" id="1_pkeyu"]
 [ext_resource type="Texture2D" uid="uid://dytj8pe3o28c4" path="res://assets/personajes/enemigos/Final_Enemy/Summon/summonAppear.png" id="1_ufmaf"]
+[ext_resource type="Shader" path="res://escenas/Enemigos/Final_Enemy/Summon/highlight.gdshader" id="2_8r1nx"]
 [ext_resource type="Texture2D" uid="uid://d0glntkf0h3i8" path="res://assets/personajes/enemigos/Final_Enemy/Summon/summonDeath.png" id="2_ikl2j"]
 [ext_resource type="Texture2D" uid="uid://ddt4i8ajflqe2" path="res://assets/personajes/enemigos/Final_Enemy/Summon/summonIdle.png" id="3_dbbst"]
 [ext_resource type="Script" path="res://escenas/Enemigos/Enemigo1/Script/hitbox_enemy.gd" id="5_jpnlf"]
@@ -9,6 +10,10 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qga3c"]
 radius = 5.0
 height = 18.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0cl4x"]
+shader = ExtResource("2_8r1nx")
+shader_parameter/intensity = 150.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6suh8"]
 atlas = ExtResource("1_ufmaf")
@@ -154,6 +159,7 @@ shape = SubResource("CapsuleShape2D_qga3c")
 disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_0cl4x")
 position = Vector2(1, -4)
 sprite_frames = SubResource("SpriteFrames_2keea")
 animation = &"Iddle"
