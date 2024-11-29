@@ -34,5 +34,10 @@ func set_health(value: int):
 	elif current_health >= 0 and current_health < old_health:
 		onDamageTook.emit()
 
+# Restore health by a given value (consider that we can't exceed the max_health)
+func restore_health(value: int):
+	set_health(current_health + value)
+	onHealthChanged.emit(current_health)
+
 func dead():
 	onDead.emit()
