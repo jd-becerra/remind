@@ -20,7 +20,7 @@ var is_attacking = false
 
 # UP, UP, DOWN, DOWN, LEFT, RIGHT
 var secret_code = [KEY_UP, KEY_UP, KEY_DOWN, KEY_DOWN, KEY_LEFT, KEY_RIGHT]
-var cheat_position = Vector2(10000, 395)
+var cheat_position = Vector2(10500, 395)
 
 func _physics_process(delta):
 	if not is_on_floor():

@@ -5,7 +5,7 @@ extends Node2D
 @onready var camera_player: Camera2D = %Camera_Jugador
 @onready var animation_player = $AnimationPlayer
 var enemycounter
-var currentenemycounter = 11
+var currentenemycounter = 12
 @onready var counter = $CanvasLayer/EnemigosCounter
 var retry = false
 
