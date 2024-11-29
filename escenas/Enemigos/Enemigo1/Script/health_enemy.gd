@@ -16,6 +16,7 @@ func take_health(value: int):
 	set_health(value)
 
 func take_damage(damage: int):
+	print("Enemy %s is being hurt" % get_parent().name)
 	var value = abs(damage)
 	set_health(-value)
 

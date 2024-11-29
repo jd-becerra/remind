@@ -24,7 +24,11 @@ func _physics_process(delta: float) -> void:
 
 
 func shoot():
-	print(boss.name)
+	# Give player time to react by playing the summon animation for 3 seconds
+	boss.sprite.play("Summon")
+	await get_tree().create_timer(1.0).timeout
+	boss.sprite.play("idle")
+
 	sonidoProyectil.play()
 	var instance = projectile.instantiate()
 	instance.direction = rotation
