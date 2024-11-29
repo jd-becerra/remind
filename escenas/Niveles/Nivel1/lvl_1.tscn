@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://cdk2o6t2g5cha"]
+[gd_scene load_steps=76 format=4 uid="uid://cdk2o6t2g5cha"]
 
 [ext_resource type="Script" path="res://escenas/Niveles/Nivel1/lvl_1.gd" id="1_k7g18"]
 [ext_resource type="Texture2D" uid="uid://ckjighbojca6b" path="res://assets/BackGR/main_background.png" id="1_o5joc"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://dh5ycptm7hw7x" path="res://iorar2.ogg" id="21_vlp7d"]
 [ext_resource type="AudioStream" uid="uid://dqykdq5ap4p46" path="res://Caminar.ogg" id="22_pa1ek"]
 [ext_resource type="PackedScene" uid="uid://qba8kpgdfafc" path="res://escenas/Enemigos/Final_Enemy/final_enemy.tscn" id="24_uiq6k"]
+[ext_resource type="PackedScene" uid="uid://b542vw8elsu6t" path="res://heart_pickup.tscn" id="25_fhhdo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_163pd"]
 texture = ExtResource("1_o5joc")
@@ -6807,3 +6808,36 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrera"]
 position = Vector2(80.5, 236.5)
 shape = SubResource("RectangleShape2D_fucq5")
+
+[node name="HeartPickup" parent="." instance=ExtResource("25_fhhdo")]
+position = Vector2(1324, 418)
+
+[node name="HeartPickup2" parent="." instance=ExtResource("25_fhhdo")]
+position = Vector2(1624, 158)
+
+[node name="HeartPickup3" parent="." instance=ExtResource("25_fhhdo")]
+position = Vector2(3120, 534)
+
+[node name="HeartPickup4" parent="." instance=ExtResource("25_fhhdo")]
+position = Vector2(3452, 214)
+
+[node name="HeartPickup5" parent="." instance=ExtResource("25_fhhdo")]
+position = Vector2(4551, 264)
+
+[node name="HeartPickup6" parent="." instance=ExtResource("25_fhhdo")]
+position = Vector2(5885, 279)
+
+[node name="HeartPickup7" parent="." instance=ExtResource("25_fhhdo")]
+position = Vector2(6998, 486)
+
+[node name="HeartPickup8" parent="." instance=ExtResource("25_fhhdo")]
+position = Vector2(7512, 307)
+
+[node name="HeartPickup9" parent="." instance=ExtResource("25_fhhdo")]
+position = Vector2(10738, 347)
+
+[node name="HeartPickup10" parent="." instance=ExtResource("25_fhhdo")]
+position = Vector2(10171, 287)
+
+[node name="HeartPickup11" parent="." instance=ExtResource("25_fhhdo")]
+position = Vector2(10438, 423)
