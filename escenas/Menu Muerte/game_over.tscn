@@ -28,7 +28,7 @@ anchor_top = 0.834877
 anchor_right = 0.356771
 anchor_bottom = 0.945988
 theme_override_font_sizes/font_size = 30
-text = "Retry"
+text = "Reiniciar"
 metadata/_edit_use_anchors_ = true
 
 [node name="btnExit" type="Button" parent="."]
@@ -39,7 +39,7 @@ anchor_top = 0.83642
 anchor_right = 0.767361
 anchor_bottom = 0.947531
 theme_override_font_sizes/font_size = 30
-text = "Exit
+text = "Salir
 "
 metadata/_edit_use_anchors_ = true
 

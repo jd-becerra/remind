@@ -25,7 +25,7 @@ offset_top = 561.0
 offset_right = 457.0
 offset_bottom = 618.0
 theme_override_font_sizes/font_size = 40
-text = "Retry"
+text = "Reiniciar"
 
 [node name="btnExit" type="Button" parent="."]
 layout_mode = 0
@@ -34,7 +34,7 @@ offset_top = 552.0
 offset_right = 944.0
 offset_bottom = 620.0
 theme_override_font_sizes/font_size = 40
-text = "Exit"
+text = "Salir"
 
 [node name="SonidoVictoria" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1me83")

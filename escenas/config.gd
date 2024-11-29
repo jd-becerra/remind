@@ -25,10 +25,15 @@ func _ready() -> void:
 	fullscreen_btn.pressed.connect(on_fullscreen_toggle)
 	%TutorialBtn.pressed.connect(_on_tutorial_pressed)
 	%TutorialClose.pressed.connect(close_tutorial)
+	%btnExit.pressed.connect(_on_btn_exit_pressed)
 
 	new_volume = Globals.volume
 	update_volume_label()
 	new_fullscreen = Globals.fullscreen
+
+	# If scene is not Lvl1, hide the btnExit button
+	if get_tree().current_scene.name != "Lvl1":
+		%btnExit.hide()
 
 func _on_guardar_cambios_pressed() -> void:
 	# Save the new settings
@@ -102,3 +107,7 @@ func _on_tutorial_pressed() -> void:
 func close_tutorial() -> void:
 	%Tutorial.hide()
 	%TutorialBtn.show()
+
+func _on_btn_exit_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://escenas/Menu Principal/menu.tscn")

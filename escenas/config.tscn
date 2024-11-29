@@ -27,76 +27,76 @@ color = Color(0, 0, 0, 1)
 [node name="Cancelar" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 209.0
-offset_top = 408.0
-offset_right = 390.0
-offset_bottom = 499.0
+offset_left = 257.0
+offset_top = 457.0
+offset_right = 438.0
+offset_bottom = 548.0
 text = "CANCELAR"
 
 [node name="Guardar" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 655.0
-offset_top = 405.0
-offset_right = 879.0
-offset_bottom = 494.0
+offset_left = 703.0
+offset_top = 454.0
+offset_right = 927.0
+offset_bottom = 543.0
 text = "GUARDAR CAMBIOS"
 
 [node name="FullBtn" type="CheckButton" parent="ColorRect"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 0
-offset_left = 566.0
-offset_top = 199.0
-offset_right = 662.0
-offset_bottom = 295.0
+offset_left = 774.0
+offset_top = 255.0
+offset_right = 870.0
+offset_bottom = 351.0
 scale = Vector2(1.58833, 1.69988)
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 204.0
-offset_top = 257.0
-offset_right = 533.0
-offset_bottom = 357.0
+offset_left = 252.0
+offset_top = 306.0
+offset_right = 581.0
+offset_bottom = 406.0
 theme_override_font_sizes/font_size = 35
 text = "Pantalla Completa"
 
 [node name="Label2" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 204.0
-offset_top = 132.0
-offset_right = 533.0
-offset_bottom = 232.0
+offset_left = 252.0
+offset_top = 181.0
+offset_right = 581.0
+offset_bottom = 281.0
 theme_override_font_sizes/font_size = 35
 text = "Volumen"
 
 [node name="Plus" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 707.0
-offset_top = 125.0
-offset_right = 769.0
-offset_bottom = 196.0
+offset_left = 875.0
+offset_top = 191.0
+offset_right = 921.0
+offset_bottom = 262.0
 theme_override_font_sizes/font_size = 45
 text = "+"
 
 [node name="Min" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 553.0
-offset_top = 122.0
-offset_right = 598.0
-offset_bottom = 193.0
+offset_left = 710.0
+offset_top = 192.0
+offset_right = 755.0
+offset_bottom = 263.0
 theme_override_font_sizes/font_size = 45
 text = "-"
 
 [node name="VolumenTxt" type="TextEdit" parent="ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 617.0
-offset_top = 134.0
-offset_right = 712.0
-offset_bottom = 194.0
+offset_left = 773.0
+offset_top = 196.0
+offset_right = 868.0
+offset_bottom = 256.0
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
@@ -120,6 +120,15 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_b1xpd")
 text = "¿Como jugar?"
+
+[node name="btnExit" type="Button" parent="ColorRect"]
+unique_name_in_owner = true
+offset_left = 40.0
+offset_top = 34.0
+offset_right = 257.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 30
+text = "Salir del juego"
 
 [node name="Tutorial" type="Control" parent="."]
 unique_name_in_owner = true
