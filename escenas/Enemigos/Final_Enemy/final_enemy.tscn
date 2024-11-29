@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://qba8kpgdfafc"]
+[gd_scene load_steps=55 format=3 uid="uid://qba8kpgdfafc"]
 
 [ext_resource type="Script" path="res://escenas/Enemigos/Final_Enemy/boss.gd" id="1_ohh5o"]
 [ext_resource type="Texture2D" uid="uid://dxpdmd3iau2e7" path="res://assets/personajes/enemigos/Final_Enemy/skill1.png" id="1_sb5i6"]
@@ -368,7 +368,6 @@ parameters/looping = true
 
 [node name="HealthComponentEnemy" type="Area2D" parent="."]
 script = ExtResource("11_cg3bn")
-max_health = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponentEnemy"]
 position = Vector2(-3.2, -14.4)
