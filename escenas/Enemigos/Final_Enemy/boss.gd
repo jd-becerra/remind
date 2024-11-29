@@ -16,7 +16,6 @@ var facing_right = false
 var is_hurt = false
 var is_dead = false
 var player_inside = false
-var is_shooting = false
 
 func _ready() -> void:
 	sonidoGruñido.play()
@@ -30,14 +29,10 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-	if is_shooting:
-		sprite.play("Summon")
+	if not player_inside:
+		sprite.play("idle")
 	else:
-		if not player_inside:
-			sprite.play("idle")
-		else:
-			sprite.play("Skill")
+		sprite.play("Skill")
 
 func _on_health_component_on_dead() -> void:
 	sprite.play("death")

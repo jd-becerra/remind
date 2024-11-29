@@ -318,7 +318,7 @@ shape = SubResource("RectangleShape2D_8jnq5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b4jw2")
 animation = &"Summon"
-frame_progress = 0.100246
+frame_progress = 0.103935
 
 [node name="Proyectiles" type="Node2D" parent="."]
 unique_name_in_owner = true
