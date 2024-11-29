@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://qba8kpgdfafc"]
+[gd_scene load_steps=52 format=3 uid="uid://qba8kpgdfafc"]
 
 [ext_resource type="Script" path="res://escenas/Enemigos/Final_Enemy/boss.gd" id="1_ohh5o"]
 [ext_resource type="Texture2D" uid="uid://dxpdmd3iau2e7" path="res://assets/personajes/enemigos/Final_Enemy/skill1.png" id="1_sb5i6"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b5uflvurkd3c6" path="res://assets/personajes/enemigos/Final_Enemy/idle2.png" id="4_no1oj"]
 [ext_resource type="Script" path="res://escenas/Enemigos/Final_Enemy/cannon.gd" id="6_ch7ok"]
 [ext_resource type="Script" path="res://escenas/Enemigos/Enemigo1/Script/hitbox_enemy.gd" id="7_257pa"]
+[ext_resource type="AudioStream" uid="uid://75y3feg0e1v1" path="res://sonidosBoss/BolaFuego.ogg" id="7_p1fkq"]
+[ext_resource type="AudioStream" uid="uid://k22p4107iycr" path="res://sonidosBoss/DañoMounstruo.ogg" id="9_fkt7v"]
+[ext_resource type="AudioStream" uid="uid://dhx72kgxhi2rx" path="res://sonidosBoss/SonidoGruñidoBoss.ogg" id="10_sr0oe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jnq5"]
 size = Vector2(20, 158)
@@ -336,6 +339,9 @@ position = Vector2(-0.600012, 27.2)
 rotation = -1.5708
 script = ExtResource("6_ch7ok")
 
+[node name="Proyectil" type="AudioStreamPlayer2D" parent="Proyectiles"]
+stream = ExtResource("7_p1fkq")
+
 [node name="HitboxComponentEnemy" type="Area2D" parent="."]
 script = ExtResource("7_257pa")
 
@@ -346,3 +352,10 @@ shape = SubResource("CapsuleShape2D_8lwuv")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitboxComponentEnemy"]
 position = Vector2(-3.6, -14.4)
 shape = SubResource("CapsuleShape2D_rudcr")
+
+[node name="DañoEnemigo" type="AudioStreamPlayer2D" parent="HitboxComponentEnemy"]
+stream = ExtResource("9_fkt7v")
+
+[node name="GruñidoBoss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_sr0oe")
+parameters/looping = true

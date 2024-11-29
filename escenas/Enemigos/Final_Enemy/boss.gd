@@ -3,9 +3,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@onready var sonidoGruñido: AudioStreamPlayer = $"GruñidoBoss"
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
+	sonidoGruñido.play()
+	await get_tree().create_timer(1.0).timeout
 	sprite.play("idle")
 
 func _physics_process(delta: float) -> void:

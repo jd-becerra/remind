@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var hurt_timer = $HurtTimer
 @onready var hitbox_component = $HitboxComponent
+@onready var dañoEnemigo = $"HealthComponent/DañoEnemigo"
 @export var health_component: HealthComponentEnemy
 
 var gravity = 10
@@ -63,6 +64,7 @@ func _on_health_component_on_dead() -> void:
 	sonidoMuerte.play()
 
 func _on_health_component_on_damage_took() -> void:
+	dañoEnemigo.play()
 	is_hurt = true
 	if is_dead == false:
 		hurt_timer.start()

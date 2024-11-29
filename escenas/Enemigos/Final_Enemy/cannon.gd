@@ -1,4 +1,5 @@
 extends Node2D
+@onready var sonidoProyectil: AudioStreamPlayer2D = $"../Proyectil"
 
 ## Set the interval of time between each shot
 @export var interval = 5.0
@@ -24,10 +25,9 @@ func _physics_process(delta: float) -> void:
 
 func shoot():
 	print(boss.name)
-
+	sonidoProyectil.play()
 	var instance = projectile.instantiate()
 	instance.direction = rotation
 	instance.spawn_pos = global_position
 	instance.spawn_rot = rotation
 	boss.add_child(instance)
-
