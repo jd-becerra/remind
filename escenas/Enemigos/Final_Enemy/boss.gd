@@ -30,10 +30,14 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	if not player_inside:
-		sprite.play("idle")
+		
+	if is_shooting:
+		sprite.play("Summon")
 	else:
-		sprite.play("Skill")
+		if not player_inside:
+			sprite.play("idle")
+		else:
+			sprite.play("Skill")
 
 func _on_health_component_on_dead() -> void:
 	sprite.play("death")
