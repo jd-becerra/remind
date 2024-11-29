@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://cdk2o6t2g5cha"]
+[gd_scene load_steps=77 format=4 uid="uid://cdk2o6t2g5cha"]
 
 [ext_resource type="Script" path="res://escenas/Niveles/Nivel1/lvl_1.gd" id="1_k7g18"]
 [ext_resource type="Texture2D" uid="uid://ckjighbojca6b" path="res://assets/BackGR/main_background.png" id="1_o5joc"]
@@ -24,7 +24,8 @@
 [ext_resource type="AudioStream" uid="uid://dh5ycptm7hw7x" path="res://iorar2.ogg" id="21_vlp7d"]
 [ext_resource type="AudioStream" uid="uid://dqykdq5ap4p46" path="res://Caminar.ogg" id="22_pa1ek"]
 [ext_resource type="PackedScene" uid="uid://qba8kpgdfafc" path="res://escenas/Enemigos/Final_Enemy/final_enemy.tscn" id="24_uiq6k"]
-[ext_resource type="PackedScene" uid="uid://b4yi1rginuomd" path="res://heart_pickup.tscn" id="25_fhhdo"]
+[ext_resource type="PackedScene" uid="uid://cmti0i6cr5xgt" path="res://heart_pickup.tscn" id="25_fhhdo"]
+[ext_resource type="PackedScene" uid="uid://d0mmvyrghjgvm" path="res://boss_music.tscn" id="26_guhee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_163pd"]
 texture = ExtResource("1_o5joc")
@@ -6841,3 +6842,6 @@ position = Vector2(10171, 287)
 
 [node name="HeartPickup11" parent="." instance=ExtResource("25_fhhdo")]
 position = Vector2(10438, 423)
+
+[node name="BossMusic" parent="." instance=ExtResource("26_guhee")]
+position = Vector2(8943, 126)

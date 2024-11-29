@@ -129,6 +129,6 @@ func heal() -> void:
 	print("Healing")
 	health_component.restore_health(1)
 
-    # Convert health_component.current_health to string
+	# Convert health_component.current_health to string
 	var health_string = str(health_component.current_health)
 	life_animation.play(health_string)

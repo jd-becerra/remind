@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-@onready var sonidoGruñido: AudioStreamPlayer = $"GruñidoBoss"
+@onready var sonidoGruñido: AudioStreamPlayer2D = $"GruñidoBoss"
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:

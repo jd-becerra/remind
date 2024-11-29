@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4yi1rginuomd"]
+[gd_scene load_steps=7 format=3 uid="uid://cmti0i6cr5xgt"]
 
 [ext_resource type="Texture2D" uid="uid://bgrw1s7mcpmid" path="res://escenas/Jugador/HeartPickup.png" id="1_7rswx"]
 [ext_resource type="Script" path="res://heart_pickup.gd" id="2_v0rwl"]

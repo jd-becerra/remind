@@ -356,6 +356,6 @@ shape = SubResource("CapsuleShape2D_rudcr")
 [node name="DañoEnemigo" type="AudioStreamPlayer2D" parent="HitboxComponentEnemy"]
 stream = ExtResource("9_fkt7v")
 
-[node name="GruñidoBoss" type="AudioStreamPlayer" parent="."]
+[node name="GruñidoBoss" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_sr0oe")
 parameters/looping = true
