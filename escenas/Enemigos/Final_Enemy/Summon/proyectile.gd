@@ -29,4 +29,4 @@ func _physics_process(_delta: float) -> void:
 func _on_Bullet_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		body.health_component.take_damage(1)
-	queue_free()
+		queue_free()
