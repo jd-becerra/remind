@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://dhkoftmg6nwaq"]
+[gd_scene load_steps=25 format=3 uid="uid://dhkoftmg6nwaq"]
 
 [ext_resource type="Script" path="res://escenas/Enemigos/Final_Enemy/Summon/proyectile.gd" id="1_pkeyu"]
 [ext_resource type="Texture2D" uid="uid://dytj8pe3o28c4" path="res://assets/personajes/enemigos/Final_Enemy/Summon/summonAppear.png" id="1_ufmaf"]
 [ext_resource type="Texture2D" uid="uid://d0glntkf0h3i8" path="res://assets/personajes/enemigos/Final_Enemy/Summon/summonDeath.png" id="2_ikl2j"]
 [ext_resource type="Texture2D" uid="uid://ddt4i8ajflqe2" path="res://assets/personajes/enemigos/Final_Enemy/Summon/summonIdle.png" id="3_dbbst"]
+[ext_resource type="Script" path="res://escenas/Enemigos/Enemigo1/Script/hitbox_enemy.gd" id="5_jpnlf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qga3c"]
 radius = 5.0
@@ -158,8 +159,9 @@ sprite_frames = SubResource("SpriteFrames_2keea")
 animation = &"Iddle"
 frame_progress = 0.728992
 
-[node name="Bullet" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 unique_name_in_owner = true
+script = ExtResource("5_jpnlf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CapsuleShape2D_iv0bx")
