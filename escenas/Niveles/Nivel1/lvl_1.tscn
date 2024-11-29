@@ -6647,7 +6647,7 @@ metadata/_aseprite_wizard_source_file_hash_ = "351c5fa68043360a69d46ae09ef8815c"
 unique_name_in_owner = true
 zoom = Vector2(1.5, 1.5)
 
-[node name="Player" parent="." instance=ExtResource("6_tvfj7")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("6_tvfj7")]
 unique_name_in_owner = true
 visible = false
 z_index = 1
