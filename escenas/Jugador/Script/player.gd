@@ -124,3 +124,11 @@ func _input(event: InputEvent) -> void:
 				position = cheat_position
 		else:
 			secret_code = [KEY_UP, KEY_UP, KEY_DOWN, KEY_DOWN, KEY_LEFT, KEY_RIGHT]
+
+func heal() -> void:
+	print("Healing")
+	health_component.restore_health(1)
+
+    # Convert health_component.current_health to string
+	var health_string = str(health_component.current_health)
+	life_animation.play(health_string)

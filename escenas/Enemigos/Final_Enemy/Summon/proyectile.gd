@@ -4,7 +4,8 @@ extends CharacterBody2D
 @export var despawn_pos_x = 344
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var area: Area2D = %Bullet
+@onready var area = %Hitbox
+
 
 var direction: float
 var spawn_pos: Vector2
@@ -27,5 +28,5 @@ func _physics_process(_delta: float) -> void:
 
 func _on_Bullet_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		body.hit()
-	queue_free()
+		body.health_component.take_damage(1)
+		queue_free()
