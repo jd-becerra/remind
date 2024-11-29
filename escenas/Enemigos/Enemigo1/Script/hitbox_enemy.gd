@@ -9,3 +9,4 @@ func _ready() -> void:
 func hit(area):
 	if area is HealthComponent:
 		area.take_damage(damage)
+	print(area.name)

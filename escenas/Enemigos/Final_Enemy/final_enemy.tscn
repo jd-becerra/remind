@@ -1,12 +1,15 @@
-[gd_scene load_steps=44 format=3 uid="uid://qba8kpgdfafc"]
+[gd_scene load_steps=49 format=3 uid="uid://qba8kpgdfafc"]
 
+[ext_resource type="Script" path="res://escenas/Enemigos/Final_Enemy/boss.gd" id="1_ohh5o"]
 [ext_resource type="Texture2D" uid="uid://dxpdmd3iau2e7" path="res://assets/personajes/enemigos/Final_Enemy/skill1.png" id="1_sb5i6"]
 [ext_resource type="Texture2D" uid="uid://bpgwr4tj4kqtl" path="res://assets/personajes/enemigos/Final_Enemy/summon.png" id="2_wnf2s"]
 [ext_resource type="Texture2D" uid="uid://cpfnkyi3j3mlp" path="res://assets/personajes/enemigos/Final_Enemy/death.png" id="3_c1bb5"]
 [ext_resource type="Texture2D" uid="uid://b5uflvurkd3c6" path="res://assets/personajes/enemigos/Final_Enemy/idle2.png" id="4_no1oj"]
+[ext_resource type="Script" path="res://escenas/Enemigos/Final_Enemy/cannon.gd" id="6_ch7ok"]
+[ext_resource type="Script" path="res://escenas/Enemigos/Enemigo1/Script/hitbox_enemy.gd" id="7_257pa"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shfg7"]
-height = 58.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jnq5"]
+size = Vector2(20, 158)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwk5n"]
 atlas = ExtResource("1_sb5i6")
@@ -290,14 +293,58 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8lwuv"]
+radius = 8.0
+height = 37.6
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rudcr"]
+radius = 18.8
+height = 47.6
+
 [node name="Final_Enemy" type="CharacterBody2D"]
+position = Vector2(686, 390)
+scale = Vector2(-5, 5)
 slide_on_ceiling = false
+script = ExtResource("1_ohh5o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7, 5)
-shape = SubResource("CapsuleShape2D_shfg7")
+position = Vector2(-28.2, -45)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8jnq5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b4jw2")
-animation = &"Skill"
-frame_progress = 0.623547
+animation = &"idle"
+frame_progress = 0.894113
+
+[node name="Proyectiles" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Punto1" type="Node2D" parent="Proyectiles"]
+position = Vector2(2.39999, -28)
+rotation = -1.5708
+script = ExtResource("6_ch7ok")
+interval = 4.0
+
+[node name="Punto2" type="Node2D" parent="Proyectiles"]
+position = Vector2(1.99999, -0.999993)
+rotation = -1.5708
+script = ExtResource("6_ch7ok")
+interval = 7.0
+
+[node name="Punto3" type="Node2D" parent="Proyectiles"]
+position = Vector2(-0.600012, 27.2)
+rotation = -1.5708
+script = ExtResource("6_ch7ok")
+
+[node name="HitboxComponentEnemy" type="Area2D" parent="."]
+script = ExtResource("7_257pa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponentEnemy"]
+position = Vector2(-9.2, 13.4)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_8lwuv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitboxComponentEnemy"]
+position = Vector2(-3.6, -14.4)
+shape = SubResource("CapsuleShape2D_rudcr")

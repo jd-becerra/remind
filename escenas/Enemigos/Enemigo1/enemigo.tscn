@@ -412,7 +412,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfc6h"]
-size = Vector2(27, 78.5)
+size = Vector2(29, 68.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6rjb"]
 size = Vector2(17, 78)
@@ -432,7 +432,7 @@ animation = &"attack_left"
 frame_progress = 0.436544
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-4.5, -37.75)
+position = Vector2(1.5, -32.75)
 shape = SubResource("RectangleShape2D_cfc6h")
 one_way_collision = true
 

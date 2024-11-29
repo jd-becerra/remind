@@ -12,11 +12,15 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var attack_area = $HitboxComponent
 @onready var health_component = $HealthComponent
+@onready var life_animation: AnimatedSprite2D = get_tree().get_root().get_node("/root/Lvl1").get_node("%Life")
 
 var is_facing_right = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking = false
-@onready var life_animation: AnimatedSprite2D = get_tree().get_root().get_node("/root/Lvl1").get_node("%Life")
+
+# UP, UP, DOWN, DOWN, LEFT, RIGHT
+var secret_code = [KEY_UP, KEY_UP, KEY_DOWN, KEY_DOWN, KEY_LEFT, KEY_RIGHT]
+var cheat_position = Vector2(10000, 395)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -106,3 +110,13 @@ func _on_health_component_on_damage_took() -> void:
 		life_animation.play("1")
 	elif health_component.current_health == 0:
 		life_animation.play("0")
+
+func _input(event: InputEvent) -> void:
+	# Check if the secret code was entered (it accepts when the code is entered in the correct order)
+	if event is InputEventKey and event.pressed:
+		if secret_code.size() > 0 and secret_code[0] == event.keycode:
+			secret_code.remove_at(0)
+			if secret_code.size() == 0:
+				position = cheat_position
+		else:
+			secret_code = [KEY_UP, KEY_UP, KEY_DOWN, KEY_DOWN, KEY_LEFT, KEY_RIGHT]

@@ -16,7 +16,6 @@ func take_health(value: int):
 	set_health(value)
 
 func take_damage(damage: int):
-	print("Jala ", current_health)
 	var value = abs(damage)
 	set_health(-value)
 

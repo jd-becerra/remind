@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://dhkoftmg6nwaq"]
+[gd_scene load_steps=23 format=3 uid="uid://dhkoftmg6nwaq"]
 
+[ext_resource type="Script" path="res://escenas/Enemigos/Final_Enemy/Summon/proyectile.gd" id="1_pkeyu"]
 [ext_resource type="Texture2D" uid="uid://dytj8pe3o28c4" path="res://assets/personajes/enemigos/Final_Enemy/Summon/summonAppear.png" id="1_ufmaf"]
 [ext_resource type="Texture2D" uid="uid://d0glntkf0h3i8" path="res://assets/personajes/enemigos/Final_Enemy/Summon/summonDeath.png" id="2_ikl2j"]
 [ext_resource type="Texture2D" uid="uid://ddt4i8ajflqe2" path="res://assets/personajes/enemigos/Final_Enemy/Summon/summonIdle.png" id="3_dbbst"]
@@ -139,6 +140,9 @@ animations = [{
 }]
 
 [node name="Summon" type="CharacterBody2D"]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_pkeyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qga3c")
@@ -147,4 +151,4 @@ shape = SubResource("CapsuleShape2D_qga3c")
 position = Vector2(1, -4)
 sprite_frames = SubResource("SpriteFrames_2keea")
 animation = &"Iddle"
-frame_progress = 0.794828
+frame_progress = 0.728992
