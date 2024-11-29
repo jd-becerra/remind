@@ -90,7 +90,7 @@ func attack():
 func _on_attack_finished():
 	is_attacking = false
 	attack_area.monitoring = false
-	sonido_ataque.play() 
+	sonido_ataque.play()
 	attack_area.get_node("CollisionShape2D").disabled = true
 	animation.disconnect("animation_finished", Callable(self, "_on_attack_finished"))
 

@@ -7,6 +7,7 @@ extends Node2D
 var enemycounter
 var currentenemycounter = 12
 @onready var counter = $CanvasLayer/EnemigosCounter
+@onready var win_flag: Area2D = %Win
 var retry = false
 
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +22,8 @@ func _ready() -> void:
 
 	animation_player.animation_finished.connect(_on_inicio_animation_finished)
 	%ConfigBtn.pressed.connect(_on_config_pressed)
+
+	win_flag.body_entered.connect(_on_win_body_entered)
 
 	if retry:
 		# go to the end of the animation
@@ -55,3 +58,7 @@ func _on_skip_pressed() -> void:
 func _on_config_pressed() -> void:
 	%ConfigMenu.show()
 	get_tree().paused = true	
+
+func _on_win_body_entered(body: Node) -> void:
+	if body.is_in_group("player"):
+		get_tree().change_scene_to_file("res://escenas/Menu Muerte/victory.tscn")

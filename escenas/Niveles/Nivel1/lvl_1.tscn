@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://cdk2o6t2g5cha"]
+[gd_scene load_steps=78 format=4 uid="uid://cdk2o6t2g5cha"]
 
 [ext_resource type="Script" path="res://escenas/Niveles/Nivel1/lvl_1.gd" id="1_k7g18"]
 [ext_resource type="Texture2D" uid="uid://ckjighbojca6b" path="res://assets/BackGR/main_background.png" id="1_o5joc"]
@@ -6616,6 +6616,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fucq5"]
 size = Vector2(181, 1201)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_othse"]
+size = Vector2(327, 686)
+
 [node name="Lvl1" type="Node2D"]
 script = ExtResource("1_k7g18")
 
@@ -6845,3 +6848,11 @@ position = Vector2(10438, 423)
 
 [node name="BossMusic" parent="." instance=ExtResource("26_guhee")]
 position = Vector2(8943, 126)
+
+[node name="Win" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(11337, 189)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win"]
+position = Vector2(-2.5, -82)
+shape = SubResource("RectangleShape2D_othse")
