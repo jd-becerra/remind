@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://qba8kpgdfafc"]
+[gd_scene load_steps=54 format=3 uid="uid://qba8kpgdfafc"]
 
 [ext_resource type="Script" path="res://escenas/Enemigos/Final_Enemy/boss.gd" id="1_ohh5o"]
 [ext_resource type="Texture2D" uid="uid://dxpdmd3iau2e7" path="res://assets/personajes/enemigos/Final_Enemy/skill1.png" id="1_sb5i6"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://k22p4107iycr" path="res://sonidosBoss/DañoMounstruo.ogg" id="9_fkt7v"]
 [ext_resource type="AudioStream" uid="uid://dhx72kgxhi2rx" path="res://sonidosBoss/SonidoGruñidoBoss.ogg" id="10_sr0oe"]
 [ext_resource type="Script" path="res://escenas/Enemigos/Enemigo1/Script/health_enemy.gd" id="11_cg3bn"]
+[ext_resource type="AudioStream" uid="uid://b4eui283an7e0" path="res://sonidosBoss/MuerteBoss.ogg" id="12_qpabg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jnq5"]
 size = Vector2(20, 158)
@@ -375,3 +376,10 @@ shape = SubResource("CapsuleShape2D_rudcr")
 
 [node name="HurtTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="MuerteBoss" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_qpabg")
+
+[node name="dañoBoss" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_fkt7v")
+volume_db = 20.0

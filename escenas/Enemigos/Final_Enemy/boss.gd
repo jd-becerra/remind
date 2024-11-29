@@ -4,6 +4,8 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @onready var sonidoGruñido: AudioStreamPlayer2D = $"GruñidoBoss"
+@onready var sonidoMuerte: AudioStreamPlayer2D = $MuerteBoss
+@onready var dañoEnemigo: AudioStreamPlayer2D = $"dañoBoss"
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox: HitboxComponentEnemy = $HitboxComponentEnemy
 @onready var health_component: HealthComponentEnemy = $HealthComponentEnemy
@@ -43,10 +45,10 @@ func _on_health_component_on_dead() -> void:
 	sprite.play("death")
 	is_dead = true
 	await get_tree().create_timer(0.3).timeout
-	#	sonidoMuerte.play()
+	sonidoMuerte.play()
 
 func _on_health_component_on_damage_took() -> void:
-	#dañoEnemigo.play()
+	dañoEnemigo.play()
 	is_hurt = true
 	if is_dead == false:
 		hurt_timer.start()
