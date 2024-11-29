@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dyrfhvq2a8iaf" path="res://escenas/Menu Principal/art/ArcadeClassic.ttf" id="3_unmvl"]
 [ext_resource type="Theme" uid="uid://di8bfntxwjdif" path="res://escenas/Menu Principal/art/button_default.tres" id="4_v3xua"]
 [ext_resource type="AudioStream" uid="uid://birl7jn6ran7v" path="res://escenas/Menu Principal/art/musica.mp3" id="5_sxmf7"]
-[ext_resource type="PackedScene" path="res://escenas/config.tscn" id="6_whclh"]
+[ext_resource type="PackedScene" uid="uid://y8j3xfbfe4m7" path="res://escenas/config.tscn" id="6_whclh"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
