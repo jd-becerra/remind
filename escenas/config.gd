@@ -23,6 +23,8 @@ func _ready() -> void:
 	increase_volume_btn.pressed.connect(on_increase_volume)
 	decrease_volume_btn.pressed.connect(on_decrease_volume)
 	fullscreen_btn.pressed.connect(on_fullscreen_toggle)
+	%TutorialBtn.pressed.connect(_on_tutorial_pressed)
+	%TutorialClose.pressed.connect(close_tutorial)
 
 	new_volume = Globals.volume
 	update_volume_label()
@@ -92,3 +94,11 @@ func update_fullscreen(state):
 func update_volume(vol_db: int) -> void:
 	for node in get_tree().get_nodes_in_group("audio"):
 		node.volume_db = vol_db
+
+func _on_tutorial_pressed() -> void:
+	%TutorialBtn.hide()
+	%Tutorial.show()
+
+func close_tutorial() -> void:
+	%Tutorial.hide()
+	%TutorialBtn.show()
